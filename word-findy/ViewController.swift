@@ -8,12 +8,23 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, BoardControllerDelegate {
+    
+    var boardVC: BoardController?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        view.backgroundColor = .systemGray2
+        
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let controller = segue.destination as? BoardController {
+            controller.delegate = self
+            boardVC = controller
+        }
+    }
+    
+    
 
 
 }
