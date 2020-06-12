@@ -15,6 +15,7 @@
 		9E8368172493F5E700F98EF9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E8368152493F5E700F98EF9 /* LaunchScreen.storyboard */; };
 		9E83681F2493FC9D00F98EF9 /* BoardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E83681E2493FC9D00F98EF9 /* BoardController.swift */; };
 		9E8368212494097400F98EF9 /* BoardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8368202494097400F98EF9 /* BoardCell.swift */; };
+		9E8368232494111000F98EF9 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8368222494110F00F98EF9 /* Board.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		9E8368182493F5E700F98EF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9E83681E2493FC9D00F98EF9 /* BoardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardController.swift; sourceTree = "<group>"; };
 		9E8368202494097400F98EF9 /* BoardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardCell.swift; sourceTree = "<group>"; };
+		9E8368222494110F00F98EF9 /* Board.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 				9E83680E2493F5E400F98EF9 /* ViewController.swift */,
 				9E8368102493F5E400F98EF9 /* Main.storyboard */,
 				9E83681E2493FC9D00F98EF9 /* BoardController.swift */,
+				9E8368222494110F00F98EF9 /* Board.swift */,
 				9E8368202494097400F98EF9 /* BoardCell.swift */,
 				9E8368132493F5E700F98EF9 /* Assets.xcassets */,
 				9E8368152493F5E700F98EF9 /* LaunchScreen.storyboard */,
@@ -146,6 +149,7 @@
 			files = (
 				9E8368212494097400F98EF9 /* BoardCell.swift in Sources */,
 				9E83681F2493FC9D00F98EF9 /* BoardController.swift in Sources */,
+				9E8368232494111000F98EF9 /* Board.swift in Sources */,
 				9E83680F2493F5E400F98EF9 /* ViewController.swift in Sources */,
 				9E83680B2493F5E400F98EF9 /* AppDelegate.swift in Sources */,
 				9E83680D2493F5E400F98EF9 /* SceneDelegate.swift in Sources */,

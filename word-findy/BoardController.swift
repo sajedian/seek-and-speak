@@ -18,24 +18,14 @@ class BoardController: UICollectionViewController {
     
     var delegate: BoardControllerDelegate?
     
-    var board = [String]()
+    var board: Board!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemGray2
-        initializeBoard()
-
+        board = Board()
     }
     
-    func initializeBoard()  {
-        
-        for _ in 0..<16 {
-            let n = Int.random(in: 0...25)
-            let ascii = 65 + n
-            let string = String(UnicodeScalar(UInt8(ascii)))
-            board.append(string)
-        }
-    }
 
     // MARK: UICollectionViewDataSource
 
@@ -47,7 +37,7 @@ class BoardController: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 16
+        return board.letters.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -57,7 +47,7 @@ class BoardController: UICollectionViewController {
     
         // Configure the cell
         cell.contentView.backgroundColor = UIColor.white
-        cell.letter.text = board[indexPath.item]
+        cell.letter.text = board.letters[indexPath.item]
         return cell
     }
 
