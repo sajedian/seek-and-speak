@@ -20,7 +20,7 @@ class BoardController: UICollectionViewController {
     
     var board: Board!
     
-    var dictionaryTrie:
+    var dictionaryTrie = Trie()
 
     override func viewDidLoad() {
         super.viewDidLoad()
