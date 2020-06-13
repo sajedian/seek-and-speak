@@ -19,12 +19,17 @@ class BoardController: UICollectionViewController {
     var delegate: BoardControllerDelegate?
     
     var board: Board!
+    
+    var dictionaryTrie:
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemGray2
+        collectionView.backgroundColor = UIColor(red: 141/255, green: 185/255, blue: 217/255, alpha: 1)
         board = Board()
+        
     }
+    
+    var dictionary = ["aardvark", "bear", "beat", "boat", "best", "cat", "donkey", "done", "deed", "elephant", "elegant", "heed", "head"]
     
 
     // MARK: UICollectionViewDataSource

@@ -12,9 +12,10 @@ struct Board {
     var letters = [String]()
     init() {
         for die in dice {
-            letters.append(die.randomElement()!)
+//            letters.append(die.randomElement()!)
+            letters.append(die.first!)
         }
-        letters.shuffle()
+        //letters.shuffle()
     }
     let dice: [[String]] = [
         ["A", "A", "E", "E", "G", "N"],

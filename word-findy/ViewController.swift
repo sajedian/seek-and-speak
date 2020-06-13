@@ -14,7 +14,7 @@ class ViewController: UIViewController, BoardControllerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemGray2
+        view.backgroundColor = UIColor(red: 141/255, green: 185/255, blue: 217/255, alpha: 1)
         
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
