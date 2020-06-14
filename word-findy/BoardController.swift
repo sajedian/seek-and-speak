@@ -20,16 +20,35 @@ class BoardController: UICollectionViewController {
     
     var board: Board!
     
-    var dictionaryTrie = Trie()
+    var dictionaryTrie: Trie!
+    
+    var wordsOnBoard: Set<String> = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.backgroundColor = UIColor(red: 141/255, green: 185/255, blue: 217/255, alpha: 1)
         board = Board()
+        loadDictionary()
+        print(wordsOnBoard)
         
     }
     
-    var dictionary = ["aardvark", "bear", "beat", "boat", "best", "cat", "donkey", "done", "deed", "elephant", "elegant", "heed", "head"]
+    func loadDictionary() {
+        if let dictionaryURL = Bundle.main.url(forResource: "web2", withExtension: "txt") {
+            if let dictText = try? String(contentsOf: dictionaryURL) {
+                dictionary = dictText.components(separatedBy: "\n")
+            }
+        }
+        dictionaryTrie = Trie()
+        for word in dictionary {
+            dictionaryTrie.insert(word: word)
+            //print(dictionaryTrie.contains(word: word))
+        }
+        wordsOnBoard = dictionaryTrie.solve(board: board)
+    }
+    
+    var dictionary = ["aardvark", "bear", "beat", "boat", "best", "cat", "donkey", "done", "deed", "elephant", "elegant", "heed", "head", "deeded", "ceded", "dee", "had", "hah", "chad", "hhh"]
+    
     
 
     // MARK: UICollectionViewDataSource
@@ -52,7 +71,12 @@ class BoardController: UICollectionViewController {
     
         // Configure the cell
         cell.contentView.backgroundColor = UIColor.white
-        cell.letter.text = board.letters[indexPath.item]
+        let letter = board.letters[indexPath.item].uppercased()
+        if letter == "Q" {
+            cell.letter.text = "Qu"
+        } else {
+            cell.letter.text = letter
+        }
         return cell
     }
 
