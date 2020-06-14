@@ -10,6 +10,9 @@ class Trie {
     var root = TrieNode()
     
     func insert(word: String) {
+        if word.isEmpty {
+            return
+        }
         var currNode = root
         for char in Array(word) {
             //advances currNode by one character
@@ -18,15 +21,89 @@ class Trie {
         //when finished adding characters, mark end of word
         currNode.isEndOfWord = true
     }
-//    
-//    func lastNodeOf(prefix: String) -> TrieNode? {
-//        var currNode = root
-//        for char in Array(word) {
-//            guard let currNode = currNode.children[char] else {
-//                return false
-//            }
-//        }
-//    }
+    
+    func contains(word: String) -> Bool {
+        if word.isEmpty {
+            return false
+        }
+        var currNode = root
+        for char in Array(word) {
+            if let nextNode = currNode.children[char] {
+                currNode = nextNode
+            } else {
+                return false
+            }
+        }
+        return currNode.isEndOfWord
+    }
+    
+    
+    func solve(board: Board) -> Set<String> {
+        var foundWords = Set<String>()
+        for (i, letter) in board.letters.enumerated(){
+            print(letter)
+            if let nextNode = root.children[Character(letter)] {
+                foundWords.formUnion(solveFromStartLetter(board:board, index: i, currNode: nextNode))
+            }
+        }
+        return foundWords
+    }
+    
+    func solveFromStartLetter(board: Board, index: Int, visited: Set<Int> = [], currNode: TrieNode, prefix: String = "") -> Set<String> {
+        
+        let letter = board.letters[index]
+
+        let visited = visited.union([index])
+        let prefix = prefix + letter
+        var foundWords = Set<String>()
+        if currNode.isEndOfWord && prefix.count > 2 && letter != "q" {
+            foundWords.insert(prefix)
+        }
+        //if the current node has no children, stop checking
+        guard !currNode.children.isEmpty else {
+            print(foundWords)
+            return foundWords
+        }
+        
+        //handle Qu tile
+        //if it's a q, step forward one node to "u" without moving in board
+        if letter == "q" {
+            if let nextNode = currNode.children["u"] {
+                var board = board
+                board.letters[index] = "u"
+                foundWords.formUnion(solveFromStartLetter(board: board, index: index, visited: visited, currNode: nextNode, prefix: prefix))
+                return foundWords
+            }
+        }
+
+        //let char = Character(board.letters[index])
+        let (row, col) = board.rowColFromIndex(index: index)
+        
+        for i in row-1...row+1 {
+            //continue if we're off the board
+            guard i >= 0 && i < board.rows else { continue }
+            
+            for j in col-1...col+1 {
+                //continue if we're off the board
+                guard j >= 0 && j < board.cols else { continue }
+                let nextIndex = board.indexFromRowCol(row: i, col: j)
+                //continue if index has already been used, this will include starting index
+                guard !visited.contains(nextIndex) else { continue }
+                let nextChar = Character(board.letters[nextIndex])
+                if let nextNode = currNode.children[nextChar] {
+                    foundWords.formUnion(solveFromStartLetter(board: board, index: nextIndex, visited: visited, currNode: nextNode, prefix: prefix))
+                    }
+                    
+                }
+                
+            }
+        
+        return foundWords
+        }
+        
+    
+    
+    
 }
 
 class TrieNode {
@@ -42,4 +119,5 @@ class TrieNode {
             return child
         }
     }
+    
 }

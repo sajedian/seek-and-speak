@@ -10,12 +10,15 @@ import Foundation
 
 struct Board {
     var letters = [String]()
+    var rows = 4
+    var cols = 4
     init() {
         for die in dice {
-//            letters.append(die.randomElement()!)
-            letters.append(die.first!)
+            letters.append(die.randomElement()!.lowercased())
         }
-        //letters.shuffle()
+        letters[7] = "q"
+        letters[2] = "q"
+        letters.shuffle()
     }
     let dice: [[String]] = [
         ["A", "A", "E", "E", "G", "N"],
@@ -28,11 +31,19 @@ struct Board {
         ["E", "I", "O", "S", "S", "T"],
         ["D", "E", "L", "R", "V", "Y"],
         ["A", "C", "H", "O", "P", "S"],
-        ["H", "I", "M", "N", "Qu", "U"],
+        ["H", "I", "M", "N", "Q", "U"],
         ["E", "E", "I", "N", "S", "U"],
         ["E", "E", "G", "H", "N", "W"],
         ["A", "F", "F", "K", "P", "S"],
         ["H", "L", "N", "N", "R", "Z"],
         ["D", "E", "I", "L", "R", "X"]
     ]
+    
+    func indexFromRowCol(row: Int, col: Int) -> Int {
+        return row * cols + col
+    }
+    
+    func rowColFromIndex(index: Int) -> (Int, Int) {
+        return index.quotientAndRemainder(dividingBy: cols)
+    }
 }
