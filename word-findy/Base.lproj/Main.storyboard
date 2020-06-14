@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qdK-3M-htK">
-                                <rect key="frame" x="30" y="94" width="355" height="355"/>
+                                <rect key="frame" x="29.5" y="94" width="355" height="355"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="qdK-3M-htK" secondAttribute="height" multiplier="1:1" id="9Ue-aU-OzU"/>
                                     <constraint firstAttribute="width" constant="355" id="ujV-Jc-J7V"/>
@@ -26,14 +26,38 @@
                                     <segue destination="uC7-Mh-ZcN" kind="embed" id="Ueh-vZ-ezE"/>
                                 </connections>
                             </containerView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xDg-W5-Psb">
+                                <rect key="frame" x="30" y="479" width="354" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="fBj-Gz-11G"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E8o-ho-mL0">
+                                <rect key="frame" x="30" y="539" width="354" height="26.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xDg-W5-Psb" secondAttribute="trailing" constant="30" id="4XE-Ex-M7v"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="E8o-ho-mL0" secondAttribute="trailing" constant="30" id="4nn-xB-90g"/>
                             <constraint firstItem="qdK-3M-htK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7Bm-qQ-CxO"/>
+                            <constraint firstItem="xDg-W5-Psb" firstAttribute="top" secondItem="qdK-3M-htK" secondAttribute="bottom" constant="30" id="P2d-kl-gFX"/>
                             <constraint firstItem="qdK-3M-htK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="dtd-AA-K2E"/>
+                            <constraint firstItem="xDg-W5-Psb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="ezF-eI-jK5"/>
+                            <constraint firstItem="E8o-ho-mL0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="isF-SM-e7S"/>
+                            <constraint firstItem="E8o-ho-mL0" firstAttribute="top" secondItem="xDg-W5-Psb" secondAttribute="bottom" constant="26" id="uCL-A3-j3c"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="guessLabel" destination="E8o-ho-mL0" id="9DW-g8-y03"/>
+                        <outlet property="textField" destination="xDg-W5-Psb" id="srm-9X-SZr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

@@ -18,6 +18,24 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
+        if let vc = window?.rootViewController as? ViewController {
+            vc.dictionaryTrie = loadDictionary()
+        }
+        
+    }
+    
+    func loadDictionary() -> Trie {
+        if let dictionaryURL = Bundle.main.url(forResource: "web2", withExtension: "txt") {
+            if let dictText = try? String(contentsOf: dictionaryURL) {
+                let dictionary = dictText.components(separatedBy: "\n")
+                let dictionaryTrie = Trie()
+                for word in dictionary {
+                    dictionaryTrie.insert(word: word)
+                }
+                return dictionaryTrie
+            }
+        }
+     fatalError("Could not find dictionary")
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
