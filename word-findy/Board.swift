@@ -16,8 +16,6 @@ struct Board {
         for die in dice {
             letters.append(die.randomElement()!.lowercased())
         }
-        letters[7] = "q"
-        letters[2] = "q"
         letters.shuffle()
     }
     let dice: [[String]] = [

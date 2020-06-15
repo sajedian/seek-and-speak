@@ -16,37 +16,34 @@ protocol BoardControllerDelegate: class {
 
 class BoardController: UICollectionViewController {
     
+   
+    
     var delegate: BoardControllerDelegate?
     
-    var board: Board!
-    
+    var board: Board! {
+        didSet {
+            wordsOnBoard = dictionaryTrie.solve(board: board)
+            print(wordsOnBoard)
+        }
+    }
     var dictionaryTrie: Trie!
     
     var wordsOnBoard: Set<String> = []
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.backgroundColor = UIColor(red: 141/255, green: 185/255, blue: 217/255, alpha: 1)
+        collectionView.layer.masksToBounds = true
+        newBoard()
+    }
+    
+    func newBoard() {
         board = Board()
-        loadDictionary()
-        print(wordsOnBoard)
-        
     }
     
-    func loadDictionary() {
-        if let dictionaryURL = Bundle.main.url(forResource: "web2", withExtension: "txt") {
-            if let dictText = try? String(contentsOf: dictionaryURL) {
-                dictionary = dictText.components(separatedBy: "\n")
-            }
-        }
-        dictionaryTrie = Trie()
-        for word in dictionary {
-            dictionaryTrie.insert(word: word)
-            //print(dictionaryTrie.contains(word: word))
-        }
-        wordsOnBoard = dictionaryTrie.solve(board: board)
-    }
-    
+
     var dictionary = ["aardvark", "bear", "beat", "boat", "best", "cat", "donkey", "done", "deed", "elephant", "elegant", "heed", "head", "deeded", "ceded", "dee", "had", "hah", "chad", "hhh"]
     
     
