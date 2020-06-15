@@ -18,6 +18,7 @@
 		9E8368232494111000F98EF9 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8368222494110F00F98EF9 /* Board.swift */; };
 		9E83682524945A5F00F98EF9 /* Trie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E83682424945A5F00F98EF9 /* Trie.swift */; };
 		9E88C83224958C7700AAC5E3 /* web2.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9E88C83124958C7700AAC5E3 /* web2.txt */; };
+		9E88C83424969A6800AAC5E3 /* SpeechViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E88C83324969A6800AAC5E3 /* SpeechViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		9E8368222494110F00F98EF9 /* Board.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
 		9E83682424945A5F00F98EF9 /* Trie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trie.swift; sourceTree = "<group>"; };
 		9E88C83124958C7700AAC5E3 /* web2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = web2.txt; sourceTree = "<group>"; };
+		9E88C83324969A6800AAC5E3 /* SpeechViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				9E83680A2493F5E400F98EF9 /* AppDelegate.swift */,
 				9E83680C2493F5E400F98EF9 /* SceneDelegate.swift */,
 				9E83680E2493F5E400F98EF9 /* ViewController.swift */,
+				9E88C83324969A6800AAC5E3 /* SpeechViewController.swift */,
 				9E8368102493F5E400F98EF9 /* Main.storyboard */,
 				9E83681E2493FC9D00F98EF9 /* BoardController.swift */,
 				9E83682424945A5F00F98EF9 /* Trie.swift */,
@@ -159,6 +162,7 @@
 				9E8368232494111000F98EF9 /* Board.swift in Sources */,
 				9E83682524945A5F00F98EF9 /* Trie.swift in Sources */,
 				9E83680F2493F5E400F98EF9 /* ViewController.swift in Sources */,
+				9E88C83424969A6800AAC5E3 /* SpeechViewController.swift in Sources */,
 				9E83680B2493F5E400F98EF9 /* AppDelegate.swift in Sources */,
 				9E83680D2493F5E400F98EF9 /* SceneDelegate.swift in Sources */,
 			);

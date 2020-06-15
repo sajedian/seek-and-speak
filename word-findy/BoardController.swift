@@ -35,6 +35,7 @@ class BoardController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.backgroundColor = UIColor(red: 141/255, green: 185/255, blue: 217/255, alpha: 1)
+        collectionView.layer.masksToBounds = true
         newBoard()
     }
     

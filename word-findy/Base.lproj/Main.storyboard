@@ -56,7 +56,7 @@
                     </view>
                     <connections>
                         <outlet property="guessLabel" destination="E8o-ho-mL0" id="9DW-g8-y03"/>
-                        <outlet property="textField" destination="xDg-W5-Psb" id="srm-9X-SZr"/>
+                        <outlet property="textField" destination="xDg-W5-Psb" id="D76-zE-ikW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

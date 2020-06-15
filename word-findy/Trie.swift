@@ -41,7 +41,6 @@ class Trie {
     func solve(board: Board) -> Set<String> {
         var foundWords = Set<String>()
         for (i, letter) in board.letters.enumerated(){
-            print(letter)
             if let nextNode = root.children[Character(letter)] {
                 foundWords.formUnion(solveFromStartLetter(board:board, index: i, currNode: nextNode))
             }
@@ -61,7 +60,6 @@ class Trie {
         }
         //if the current node has no children, stop checking
         guard !currNode.children.isEmpty else {
-            print(foundWords)
             return foundWords
         }
         

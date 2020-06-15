@@ -14,5 +14,11 @@ class BoardCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        contentView.layer.shadowColor = UIColor.black.cgColor
+        contentView.layer.shadowOffset = CGSize(width: 1, height: 1)
+        contentView.layer.shadowRadius = 3
+        contentView.layer.shadowOpacity = 1
+        contentView.layer.masksToBounds = true
+        
     }
 }
