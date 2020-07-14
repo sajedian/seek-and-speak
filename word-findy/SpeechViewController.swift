@@ -26,9 +26,6 @@ public class SpeechViewController: UIViewController, SFSpeechRecognizerDelegate 
     
     private let audioEngine = AVAudioEngine()
     
-//    @IBOutlet var textView: UITextView!
-//
-//    @IBOutlet var recordButton: UIButton!
     
     // MARK: View Controller Lifecycle
     
@@ -60,7 +57,10 @@ public class SpeechViewController: UIViewController, SFSpeechRecognizerDelegate 
         ])
         recordButton = UIButton()
         recordButton.setTitle("Start Recording", for: [])
-        recordButton.addTarget(self, action: #selector(recordButtonTapped), for: .touchUpInside)
+        recordButton.addTarget(self, action: #selector(recordButtonTouched), for: .touchDown)
+        recordButton.addTarget(self, action: #selector(recordButtonReleased), for: .touchUpInside)
+
+        recordButton.backgroundColor = .red
         view.addSubview(recordButton)
         recordButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -198,21 +198,23 @@ public class SpeechViewController: UIViewController, SFSpeechRecognizerDelegate 
         }
     }
     
-    // MARK: Interface Builder actions
+    // MARK: Record Button Actions
     
-    @objc func recordButtonTapped() {
+    @objc func recordButtonTouched() {
+        do {
+            try startRecording()
+            recordButton.setTitle("Stop Recording", for: [])
+        } catch {
+            recordButton.setTitle("Recording Not Available", for: [])
+        }
+    }
+
+    @objc func recordButtonReleased() {
         if audioEngine.isRunning {
             audioEngine.stop()
             recognitionRequest?.endAudio()
             recordButton.isEnabled = false
             recordButton.setTitle("Stopping", for: .disabled)
-        } else {
-            do {
-                try startRecording()
-                recordButton.setTitle("Stop Recording", for: [])
-            } catch {
-                recordButton.setTitle("Recording Not Available", for: [])
-            }
         }
     }
 }

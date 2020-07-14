@@ -44,8 +44,7 @@ class BoardController: UICollectionViewController {
     }
     
 
-    var dictionary = ["aardvark", "bear", "beat", "boat", "best", "cat", "donkey", "done", "deed", "elephant", "elegant", "heed", "head", "deeded", "ceded", "dee", "had", "hah", "chad", "hhh"]
-    
+//  tia
     
 
     // MARK: UICollectionViewDataSource
