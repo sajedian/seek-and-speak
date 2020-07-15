@@ -16,7 +16,7 @@ enum GuessType: String {
 }
 
 struct Game {
-    var secondsLeft = 180
+    var secondsRemaining = 180
     var score = 0
     var wordsOnBoard = Set<String>()
     var correctWords = Set<String>()

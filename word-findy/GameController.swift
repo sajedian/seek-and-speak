@@ -8,9 +8,13 @@
 
 import Foundation
 
-
+protocol GameControllerDelegate: class {
+    func timerDidCountDown(secondsRemaining: Int)
+}
 
 class GameController {
+
+    weak var delegate: GameControllerDelegate?
 
     var game: Game!
     var dictionaryTrie: Trie!
@@ -26,6 +30,8 @@ class GameController {
         dictionaryTrie = dict
         newGame()
     }
+
+
 
 
 
@@ -51,6 +57,7 @@ class GameController {
                 game.guessType = .correct
                 game.wordGuessed = word
                 game.correctWords.insert(word)
+                updateScore(wordLength: word.count)
                 return
             }
         }
@@ -60,6 +67,13 @@ class GameController {
         } else {
             game.guessType = .alreadyGuessed
         }
+
+    }
+
+    @objc func countDownTimerFired() {
+        print(game.secondsRemaining)
+        game.secondsRemaining -= 1
+        delegate?.timerDidCountDown(secondsRemaining: game.secondsRemaining)
 
     }
 
@@ -86,6 +100,7 @@ class GameController {
     func newGame() {
         game = Game()
         game.wordsOnBoard = dictionaryTrie.solve(board: game.board)
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(countDownTimerFired), userInfo: nil, repeats: true)
     }
 
 }

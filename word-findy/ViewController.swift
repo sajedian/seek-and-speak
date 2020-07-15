@@ -17,16 +17,18 @@ class ViewController: UIViewController, BoardControllerDelegate {
     var dictionaryTrie: Trie!
     @IBOutlet var textField: UITextField!
     @IBOutlet var guessLabel: UILabel!
+    @IBOutlet var scoreLabel: UILabel!
+    @IBOutlet var timeLabel: UILabel!
     
     var correctGuessedWords: Set<String> = []
-
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(red: 141/255, green: 185/255, blue: 217/255, alpha: 1)
         guessLabel.text = "Guess a word"
         textField.autocorrectionType = .no
         guessLabel.text = gameController.displayText
-        
+
+        gameController.delegate = self
         //load speech controller vc
         speechVC = SpeechViewController()
         self.addChild(speechVC)
@@ -53,6 +55,12 @@ class ViewController: UIViewController, BoardControllerDelegate {
     
 }
 
+extension ViewController: GameControllerDelegate {
+    func timerDidCountDown(secondsRemaining: Int) {
+        timeLabel.text = String(secondsRemaining)
+    }
+}
+
 extension ViewController: UITextFieldDelegate {
 
         
@@ -62,6 +70,7 @@ extension ViewController: UITextFieldDelegate {
         }
         gameController.playerGuessed(text: text)
         guessLabel.text = gameController.displayText
+        scoreLabel.text = String(gameController.game.score)
         textField.text = ""
         return true
     }
@@ -77,5 +86,6 @@ extension ViewController: SpeechViewControllerDelegate {
         let strings = results.map { $0.formattedString.lowercased() }
         gameController.playerGuessed(speech: strings)
         guessLabel.text = gameController.displayText
+        scoreLabel.text = String(gameController.game.score)
     }
 }
