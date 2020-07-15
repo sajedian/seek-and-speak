@@ -26,13 +26,9 @@ public class SpeechViewController: UIViewController, SFSpeechRecognizerDelegate 
     
     private let audioEngine = AVAudioEngine()
     
-//    @IBOutlet var textView: UITextView!
-//
-//    @IBOutlet var recordButton: UIButton!
     
     // MARK: View Controller Lifecycle
-    
-    var textView: UITextView!
+
     var recordButton: UIButton!
     var delegate: SpeechViewControllerDelegate?
     
@@ -43,29 +39,22 @@ public class SpeechViewController: UIViewController, SFSpeechRecognizerDelegate 
         view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
 
-        view.backgroundColor = .systemGray3
-        textView = UITextView()
-        
-        view.addSubview(textView)
-        textView.text = "Start Guessing"
-        textView.textColor = .black
-        
-        textView.translatesAutoresizingMaskIntoConstraints = false
-        textView.isScrollEnabled = false
-        NSLayoutConstraint.activate([
-            textView.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor),
-            textView.heightAnchor.constraint(equalToConstant: 100),
-            textView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            textView.widthAnchor.constraint(equalToConstant: 300)
-        ])
+        view.backgroundColor = UIColor(red: 141/255, green: 185/255, blue: 217/255, alpha: 1)
+
         recordButton = UIButton()
-        recordButton.setTitle("Start Recording", for: [])
-        recordButton.addTarget(self, action: #selector(recordButtonTapped), for: .touchUpInside)
+        recordButton.addTarget(self, action: #selector(recordButtonTouched), for: .touchDown)
+        recordButton.addTarget(self, action: #selector(recordButtonReleased), for: .touchUpInside)
+        recordButton.backgroundColor = .red
+        recordButton.frame = CGRect(x: 200, y: 100, width: 50, height: 50)
+        recordButton.layer.cornerRadius = 35
         view.addSubview(recordButton)
         recordButton.translatesAutoresizingMaskIntoConstraints = false
+
         NSLayoutConstraint.activate([
             recordButton.bottomAnchor.constraint(equalTo: view.layoutMarginsGuide.bottomAnchor, constant: -20),
-            recordButton.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+            recordButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            recordButton.widthAnchor.constraint(equalToConstant: 70),
+            recordButton.heightAnchor.constraint(equalToConstant: 70)
         ])
         
         
@@ -101,15 +90,12 @@ public class SpeechViewController: UIViewController, SFSpeechRecognizerDelegate 
                     
                 case .denied:
                     self.recordButton.isEnabled = false
-                    self.recordButton.setTitle("User denied access to speech recognition", for: .disabled)
                     
                 case .restricted:
                     self.recordButton.isEnabled = false
-                    self.recordButton.setTitle("Speech recognition restricted on this device", for: .disabled)
                     
                 case .notDetermined:
                     self.recordButton.isEnabled = false
-                    self.recordButton.setTitle("Speech recognition not yet authorized", for: .disabled)
                     
                 default:
                     self.recordButton.isEnabled = false
@@ -151,12 +137,10 @@ public class SpeechViewController: UIViewController, SFSpeechRecognizerDelegate 
             
             if let result = result {
                 // Update the text view with the results.
-                self.textView.text = result.bestTranscription.formattedString
                 isFinal = result.isFinal
                 if isFinal {
                     self.delegate?.speechControllerDidFinish(with: result.transcriptions)
                 }
-                print("Text \(result.bestTranscription.formattedString)")
             }
             
             if error != nil || isFinal {
@@ -168,7 +152,6 @@ public class SpeechViewController: UIViewController, SFSpeechRecognizerDelegate 
                 self.recognitionTask = nil
 
                 self.recordButton.isEnabled = true
-                self.recordButton.setTitle("Start Recording", for: [])
                 
             }
         }
@@ -181,9 +164,7 @@ public class SpeechViewController: UIViewController, SFSpeechRecognizerDelegate 
         
         audioEngine.prepare()
         try audioEngine.start()
-        
-        // Let the user know to start talking.
-        textView.text = "(Go ahead, I'm listening)"
+
     }
     
     // MARK: SFSpeechRecognizerDelegate
@@ -191,28 +172,29 @@ public class SpeechViewController: UIViewController, SFSpeechRecognizerDelegate 
     public func speechRecognizer(_ speechRecognizer: SFSpeechRecognizer, availabilityDidChange available: Bool) {
         if available {
             recordButton.isEnabled = true
-            recordButton.setTitle("Start Recording", for: [])
         } else {
             recordButton.isEnabled = false
             recordButton.setTitle("Recognition Not Available", for: .disabled)
         }
     }
     
-    // MARK: Interface Builder actions
+    // MARK: Record Button Actions
     
-    @objc func recordButtonTapped() {
+    @objc func recordButtonTouched() {
+        do {
+            try startRecording()
+            recordButton.backgroundColor = .purple
+        } catch {
+            recordButton.setTitle("Recording Not Available", for: [])
+        }
+    }
+
+    @objc func recordButtonReleased() {
+        recordButton.backgroundColor = .red
         if audioEngine.isRunning {
             audioEngine.stop()
             recognitionRequest?.endAudio()
             recordButton.isEnabled = false
-            recordButton.setTitle("Stopping", for: .disabled)
-        } else {
-            do {
-                try startRecording()
-                recordButton.setTitle("Stop Recording", for: [])
-            } catch {
-                recordButton.setTitle("Recording Not Available", for: [])
-            }
         }
     }
 }

@@ -19,16 +19,9 @@ class BoardController: UICollectionViewController {
    
     
     var delegate: BoardControllerDelegate?
-    
-    var board: Board! {
-        didSet {
-            wordsOnBoard = dictionaryTrie.solve(board: board)
-            print(wordsOnBoard)
-        }
-    }
+    var gameController: GameController!
     var dictionaryTrie: Trie!
-    
-    var wordsOnBoard: Set<String> = []
+
     
     
 
@@ -36,17 +29,8 @@ class BoardController: UICollectionViewController {
         super.viewDidLoad()
         collectionView.backgroundColor = UIColor(red: 141/255, green: 185/255, blue: 217/255, alpha: 1)
         collectionView.layer.masksToBounds = true
-        newBoard()
     }
-    
-    func newBoard() {
-        board = Board()
-    }
-    
 
-    var dictionary = ["aardvark", "bear", "beat", "boat", "best", "cat", "donkey", "done", "deed", "elephant", "elegant", "heed", "head", "deeded", "ceded", "dee", "had", "hah", "chad", "hhh"]
-    
-    
 
     // MARK: UICollectionViewDataSource
 
@@ -58,7 +42,7 @@ class BoardController: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return board.letters.count
+        return gameController.game.board.letters.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -68,7 +52,7 @@ class BoardController: UICollectionViewController {
     
         // Configure the cell
         cell.contentView.backgroundColor = UIColor.white
-        let letter = board.letters[indexPath.item].uppercased()
+        let letter = gameController.game.board.letters[indexPath.item].uppercased()
         if letter == "Q" {
             cell.letter.text = "Qu"
         } else {

@@ -19,6 +19,8 @@
 		9E83682524945A5F00F98EF9 /* Trie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E83682424945A5F00F98EF9 /* Trie.swift */; };
 		9E88C83224958C7700AAC5E3 /* web2.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9E88C83124958C7700AAC5E3 /* web2.txt */; };
 		9E88C83424969A6800AAC5E3 /* SpeechViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E88C83324969A6800AAC5E3 /* SpeechViewController.swift */; };
+		9ED1806424BE62CE00BDB452 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED1806324BE62CE00BDB452 /* Game.swift */; };
+		9ED1806624BE673700BDB452 /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED1806524BE673700BDB452 /* GameController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		9E83682424945A5F00F98EF9 /* Trie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trie.swift; sourceTree = "<group>"; };
 		9E88C83124958C7700AAC5E3 /* web2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = web2.txt; sourceTree = "<group>"; };
 		9E88C83324969A6800AAC5E3 /* SpeechViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechViewController.swift; sourceTree = "<group>"; };
+		9ED1806324BE62CE00BDB452 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		9ED1806524BE673700BDB452 /* GameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +76,8 @@
 				9E83680C2493F5E400F98EF9 /* SceneDelegate.swift */,
 				9E83680E2493F5E400F98EF9 /* ViewController.swift */,
 				9E88C83324969A6800AAC5E3 /* SpeechViewController.swift */,
+				9ED1806324BE62CE00BDB452 /* Game.swift */,
+				9ED1806524BE673700BDB452 /* GameController.swift */,
 				9E8368102493F5E400F98EF9 /* Main.storyboard */,
 				9E83681E2493FC9D00F98EF9 /* BoardController.swift */,
 				9E83682424945A5F00F98EF9 /* Trie.swift */,
@@ -158,6 +164,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				9E8368212494097400F98EF9 /* BoardCell.swift in Sources */,
+				9ED1806624BE673700BDB452 /* GameController.swift in Sources */,
+				9ED1806424BE62CE00BDB452 /* Game.swift in Sources */,
 				9E83681F2493FC9D00F98EF9 /* BoardController.swift in Sources */,
 				9E8368232494111000F98EF9 /* Board.swift in Sources */,
 				9E83682524945A5F00F98EF9 /* Trie.swift in Sources */,
