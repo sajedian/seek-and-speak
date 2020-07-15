@@ -13,6 +13,7 @@ class ViewController: UIViewController, BoardControllerDelegate {
     
     var boardVC: BoardController!
     var speechVC: SpeechViewController!
+    var gameController: GameController!
     var dictionaryTrie: Trie!
     @IBOutlet var textField: UITextField!
     @IBOutlet var guessLabel: UILabel!
@@ -24,6 +25,7 @@ class ViewController: UIViewController, BoardControllerDelegate {
         view.backgroundColor = UIColor(red: 141/255, green: 185/255, blue: 217/255, alpha: 1)
         guessLabel.text = "Guess a word"
         textField.autocorrectionType = .no
+        guessLabel.text = gameController.displayText
         
         //load speech controller vc
         speechVC = SpeechViewController()
@@ -36,17 +38,15 @@ class ViewController: UIViewController, BoardControllerDelegate {
             speechVC.view.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10)
             ])
         speechVC.delegate = self
-        speechVC.wordConstraints = Array(boardVC.wordsOnBoard.prefix(100))
+        speechVC.wordConstraints = Array(gameController.game.wordsOnBoard.prefix(100))
         speechVC.didMove(toParent: self)
-        
-        
-        
+
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let controller = segue.destination as? BoardController {
             controller.delegate = self
-            controller.dictionaryTrie = dictionaryTrie
+            controller.gameController = gameController
             boardVC = controller
         }
     }
@@ -60,21 +60,8 @@ extension ViewController: UITextFieldDelegate {
         guard let text = textField.text else {
             return false
         }
-        if boardVC.wordsOnBoard.contains(text) {
-            if correctGuessedWords.contains(text) {
-                guessLabel.text = "\(text) -- already guessed"
-                guessLabel.textColor = .purple
-            } else {
-                correctGuessedWords.insert(text)
-                guessLabel.text = "\(text) -- correct"
-                guessLabel.textColor = .green
-            }
-            
-            print(correctGuessedWords)
-        } else {
-            guessLabel.text = "\(text) -- incorrect"
-            guessLabel.textColor = .purple
-        }
+        gameController.playerGuessed(text: text)
+        guessLabel.text = gameController.displayText
         textField.text = ""
         return true
     }
@@ -83,23 +70,12 @@ extension ViewController: UITextFieldDelegate {
 }
 
 
+
 extension ViewController: SpeechViewControllerDelegate {
     func speechControllerDidFinish(with results: [SFTranscription]) {
-        for result in results {
-            let str = result.formattedString.lowercased()
-            if boardVC.wordsOnBoard.contains(str) {
-                correctGuessedWords.insert(str)
-                guessLabel.text = "\(str) -- correct"
-                guessLabel.textColor = .green
-                return
-            }
-            
-        }
-        let str = results[0].formattedString.lowercased()
-        guessLabel.text = "\(str) -- incorrect"
-        guessLabel.textColor = .purple
+        guard !results.isEmpty else { return }
+        let strings = results.map { $0.formattedString.lowercased() }
+        gameController.playerGuessed(speech: strings)
+        guessLabel.text = gameController.displayText
     }
-    
-    
 }
-

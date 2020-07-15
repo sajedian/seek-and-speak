@@ -19,7 +19,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
         if let vc = window?.rootViewController as? ViewController {
-            vc.dictionaryTrie = loadDictionary()
+            let dictionaryTrie = loadDictionary()
+            vc.dictionaryTrie = dictionaryTrie
+            vc.gameController = GameController(dict: dictionaryTrie)
         }
         
     }
