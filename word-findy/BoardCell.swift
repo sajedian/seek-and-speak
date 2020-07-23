@@ -9,9 +9,9 @@
 import UIKit
 
 class BoardCell: UICollectionViewCell {
-    
+
     @IBOutlet var letter: UILabel!
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         contentView.layer.shadowColor = UIColor.black.cgColor
@@ -19,6 +19,5 @@ class BoardCell: UICollectionViewCell {
         contentView.layer.shadowRadius = 3
         contentView.layer.shadowOpacity = 1
         contentView.layer.masksToBounds = true
-        
     }
 }

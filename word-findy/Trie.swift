@@ -8,7 +8,7 @@
 
 class Trie {
     var root = TrieNode()
-    
+
     func insert(word: String) {
         if word.isEmpty {
             return
@@ -21,7 +21,7 @@ class Trie {
         //when finished adding characters, mark end of word
         currNode.isEndOfWord = true
     }
-    
+
     func contains(word: String) -> Bool {
         if word.isEmpty {
             return false
@@ -36,20 +36,20 @@ class Trie {
         }
         return currNode.isEndOfWord
     }
-    
-    
+
     func solve(board: Board) -> Set<String> {
         var foundWords = Set<String>()
-        for (i, letter) in board.letters.enumerated(){
+        for (index, letter) in board.letters.enumerated() {
             if let nextNode = root.children[Character(letter)] {
-                foundWords.formUnion(solveFromStartLetter(board:board, index: i, currNode: nextNode))
+                foundWords.formUnion(solveFromStartLetter(board: board, index: index, currNode: nextNode))
             }
         }
         return foundWords
     }
-    
-    func solveFromStartLetter(board: Board, index: Int, visited: Set<Int> = [], currNode: TrieNode, prefix: String = "") -> Set<String> {
-        
+
+    func solveFromStartLetter(board: Board, index: Int, visited: Set<Int> = [],
+                              currNode: TrieNode, prefix: String = "") -> Set<String> {
+
         let letter = board.letters[index]
 
         let visited = visited.union([index])
@@ -62,52 +62,48 @@ class Trie {
         guard !currNode.children.isEmpty else {
             return foundWords
         }
-        
+
         //handle Qu tile
         //if it's a q, step forward one node to "u" without moving in board
         if letter == "q" {
             if let nextNode = currNode.children["u"] {
                 var board = board
                 board.letters[index] = "u"
-                foundWords.formUnion(solveFromStartLetter(board: board, index: index, visited: visited, currNode: nextNode, prefix: prefix))
+                foundWords.formUnion(solveFromStartLetter(board: board, index: index,
+                                                          visited: visited, currNode: nextNode, prefix: prefix))
                 return foundWords
             }
         }
 
         //let char = Character(board.letters[index])
         let (row, col) = board.rowColFromIndex(index: index)
-        
-        for i in row-1...row+1 {
+
+        for rowIndex in row-1...row+1 {
             //continue if we're off the board
-            guard i >= 0 && i < board.rows else { continue }
-            
-            for j in col-1...col+1 {
+            guard rowIndex >= 0 && rowIndex < board.rows else { continue }
+
+            for colIndex in col-1...col+1 {
                 //continue if we're off the board
-                guard j >= 0 && j < board.cols else { continue }
-                let nextIndex = board.indexFromRowCol(row: i, col: j)
+                guard colIndex >= 0 && colIndex < board.cols else { continue }
+                let nextIndex = board.indexFromRowCol(row: rowIndex, col: colIndex)
                 //continue if index has already been used, this will include starting index
                 guard !visited.contains(nextIndex) else { continue }
                 let nextChar = Character(board.letters[nextIndex])
                 if let nextNode = currNode.children[nextChar] {
-                    foundWords.formUnion(solveFromStartLetter(board: board, index: nextIndex, visited: visited, currNode: nextNode, prefix: prefix))
+                    foundWords.formUnion(solveFromStartLetter(board: board, index: nextIndex,
+                                                              visited: visited, currNode: nextNode, prefix: prefix))
                     }
-                    
                 }
-                
             }
-        
+
         return foundWords
         }
-        
-    
-    
-    
 }
 
 class TrieNode {
+
     var children: [Character: TrieNode] = [:]
     var isEndOfWord = false
-    
     func findOrCreateChild(for char: Character) -> TrieNode {
         if let child = children[char] {
             return child
@@ -117,5 +113,4 @@ class TrieNode {
             return child
         }
     }
-    
 }
