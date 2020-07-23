@@ -55,6 +55,57 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9E3F334724CA0087007836BC /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9E83680E2493F5E400F98EF9 /* ViewController.swift */,
+				9E88C83324969A6800AAC5E3 /* SpeechViewController.swift */,
+				9E83681E2493FC9D00F98EF9 /* BoardController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		9E3F334A24CA00BD007836BC /* Model Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9ED1806524BE673700BDB452 /* GameController.swift */,
+			);
+			path = "Model Controllers";
+			sourceTree = "<group>";
+		};
+		9E3F334B24CA00DE007836BC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9E83680A2493F5E400F98EF9 /* AppDelegate.swift */,
+				9E83680C2493F5E400F98EF9 /* SceneDelegate.swift */,
+				9E8368102493F5E400F98EF9 /* Main.storyboard */,
+				9E8368152493F5E700F98EF9 /* LaunchScreen.storyboard */,
+				9E8368132493F5E700F98EF9 /* Assets.xcassets */,
+				9E8368182493F5E700F98EF9 /* Info.plist */,
+				9E88C83124958C7700AAC5E3 /* web2.txt */,
+				9E3F334524C9F97C007836BC /* UIColor+Extension.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		9E3F334C24CA0130007836BC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9E83682424945A5F00F98EF9 /* Trie.swift */,
+				9E8368222494110F00F98EF9 /* Board.swift */,
+				9ED1806324BE62CE00BDB452 /* Game.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		9E3F334D24CA015C007836BC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9E8368202494097400F98EF9 /* BoardCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		9E8367FE2493F5E400F98EF9 = {
 			isa = PBXGroup;
 			children = (
@@ -74,22 +125,11 @@
 		9E8368092493F5E400F98EF9 /* word-findy */ = {
 			isa = PBXGroup;
 			children = (
-				9E83680A2493F5E400F98EF9 /* AppDelegate.swift */,
-				9E83680C2493F5E400F98EF9 /* SceneDelegate.swift */,
-				9E83680E2493F5E400F98EF9 /* ViewController.swift */,
-				9E3F334524C9F97C007836BC /* UIColor+Extension.swift */,
-				9E88C83324969A6800AAC5E3 /* SpeechViewController.swift */,
-				9ED1806324BE62CE00BDB452 /* Game.swift */,
-				9ED1806524BE673700BDB452 /* GameController.swift */,
-				9E8368102493F5E400F98EF9 /* Main.storyboard */,
-				9E83681E2493FC9D00F98EF9 /* BoardController.swift */,
-				9E83682424945A5F00F98EF9 /* Trie.swift */,
-				9E8368222494110F00F98EF9 /* Board.swift */,
-				9E8368202494097400F98EF9 /* BoardCell.swift */,
-				9E8368132493F5E700F98EF9 /* Assets.xcassets */,
-				9E8368152493F5E700F98EF9 /* LaunchScreen.storyboard */,
-				9E8368182493F5E700F98EF9 /* Info.plist */,
-				9E88C83124958C7700AAC5E3 /* web2.txt */,
+				9E3F334C24CA0130007836BC /* Models */,
+				9E3F334A24CA00BD007836BC /* Model Controllers */,
+				9E3F334724CA0087007836BC /* View Controllers */,
+				9E3F334D24CA015C007836BC /* Views */,
+				9E3F334B24CA00DE007836BC /* Resources */,
 			);
 			path = "word-findy";
 			sourceTree = "<group>";
