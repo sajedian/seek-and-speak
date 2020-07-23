@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:word-findy.xcodeproj">
+      location = "self:/Users/rsajedian/Desktop/word-findy/seek-and-speak.xcodeproj">
    </FileRef>
 </Workspace>

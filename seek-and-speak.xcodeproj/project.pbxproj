@@ -26,7 +26,7 @@
 
 /* Begin PBXFileReference section */
 		9E3F334524C9F97C007836BC /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
-		9E8368072493F5E400F98EF9 /* word-findy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "word-findy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9E8368072493F5E400F98EF9 /* seek-and-speak.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "seek-and-speak.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E83680A2493F5E400F98EF9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9E83680C2493F5E400F98EF9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		9E83680E2493F5E400F98EF9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -109,7 +109,7 @@
 		9E8367FE2493F5E400F98EF9 = {
 			isa = PBXGroup;
 			children = (
-				9E8368092493F5E400F98EF9 /* word-findy */,
+				9E8368092493F5E400F98EF9 /* seek-and-speak */,
 				9E8368082493F5E400F98EF9 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -117,12 +117,12 @@
 		9E8368082493F5E400F98EF9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9E8368072493F5E400F98EF9 /* word-findy.app */,
+				9E8368072493F5E400F98EF9 /* seek-and-speak.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		9E8368092493F5E400F98EF9 /* word-findy */ = {
+		9E8368092493F5E400F98EF9 /* seek-and-speak */ = {
 			isa = PBXGroup;
 			children = (
 				9E3F334C24CA0130007836BC /* Models */,
@@ -131,15 +131,15 @@
 				9E3F334D24CA015C007836BC /* Views */,
 				9E3F334B24CA00DE007836BC /* Resources */,
 			);
-			path = "word-findy";
+			path = "seek-and-speak";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		9E8368062493F5E400F98EF9 /* word-findy */ = {
+		9E8368062493F5E400F98EF9 /* seek-and-speak */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9E83681B2493F5E700F98EF9 /* Build configuration list for PBXNativeTarget "word-findy" */;
+			buildConfigurationList = 9E83681B2493F5E700F98EF9 /* Build configuration list for PBXNativeTarget "seek-and-speak" */;
 			buildPhases = (
 				9E8368032493F5E400F98EF9 /* Sources */,
 				9E8368042493F5E400F98EF9 /* Frameworks */,
@@ -150,9 +150,9 @@
 			);
 			dependencies = (
 			);
-			name = "word-findy";
+			name = "seek-and-speak";
 			productName = "word-findy";
-			productReference = 9E8368072493F5E400F98EF9 /* word-findy.app */;
+			productReference = 9E8368072493F5E400F98EF9 /* seek-and-speak.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -170,7 +170,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 9E8368022493F5E400F98EF9 /* Build configuration list for PBXProject "word-findy" */;
+			buildConfigurationList = 9E8368022493F5E400F98EF9 /* Build configuration list for PBXProject "seek-and-speak" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -183,7 +183,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9E8368062493F5E400F98EF9 /* word-findy */,
+				9E8368062493F5E400F98EF9 /* seek-and-speak */,
 			);
 		};
 /* End PBXProject section */
@@ -418,7 +418,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		9E8368022493F5E400F98EF9 /* Build configuration list for PBXProject "word-findy" */ = {
+		9E8368022493F5E400F98EF9 /* Build configuration list for PBXProject "seek-and-speak" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9E8368192493F5E700F98EF9 /* Debug */,
@@ -427,7 +427,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9E83681B2493F5E700F98EF9 /* Build configuration list for PBXNativeTarget "word-findy" */ = {
+		9E83681B2493F5E700F98EF9 /* Build configuration list for PBXNativeTarget "seek-and-speak" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9E83681C2493F5E700F98EF9 /* Debug */,
