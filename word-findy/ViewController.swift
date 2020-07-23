@@ -57,6 +57,17 @@ class ViewController: UIViewController, BoardControllerDelegate {
             boardVC = controller
         }
     }
+
+    func updateDisplay() {
+        scoreAdditionLabel.alpha = 1
+        guessLabel.text = gameController.displayText
+        guessLabel.textColor = gameController.game.displayColor
+        scoreLabel.text = String(gameController.game.score)
+        scoreAdditionLabel.text = gameController.game.scoreAdditionDisplay
+        UIView.animate(withDuration: 2) { [weak self] in
+            self?.scoreAdditionLabel.alpha = 0
+        }
+    }
 }
 
 extension ViewController: GameControllerDelegate {
@@ -88,11 +99,8 @@ extension ViewController: UITextFieldDelegate {
             return false
         }
         gameController.playerGuessed(text: text)
-        guessLabel.text = gameController.displayText
-        guessLabel.textColor = gameController.game.displayColor
-        scoreLabel.text = String(gameController.game.score)
         textField.text = ""
-        scoreAdditionLabel.text = gameController.game.scoreAdditionDisplay
+        updateDisplay()
         return true
     }
 }
@@ -103,9 +111,6 @@ extension ViewController: SpeechViewControllerDelegate {
         guard !results.isEmpty else { return }
         let strings = results.map { $0.formattedString.lowercased() }
         gameController.playerGuessed(speech: strings)
-        guessLabel.text = gameController.displayText
-        guessLabel.textColor = gameController.game.displayColor
-        scoreLabel.text = String(gameController.game.score)
-        scoreAdditionLabel.text = gameController.game.scoreAdditionDisplay
+        updateDisplay()
     }
 }
