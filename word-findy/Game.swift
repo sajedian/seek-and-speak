@@ -24,4 +24,9 @@ struct Game {
     var guessType: GuessType?
     var wordGuessed: String?
 
+    func getTimeRemainingDisplay() -> String {
+        let minutes = secondsRemaining / 60
+        let seconds = secondsRemaining % 60
+        return "\(minutes):\(seconds)"
+    }
 }

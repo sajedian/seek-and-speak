@@ -9,7 +9,7 @@
 import Foundation
 
 protocol GameControllerDelegate: class {
-    func timerDidCountDown(secondsRemaining: Int)
+    func timerDidCountDown(timeRemaining: String)
 }
 
 class GameController {
@@ -68,7 +68,7 @@ class GameController {
     @objc func countDownTimerFired() {
         print(game.secondsRemaining)
         game.secondsRemaining -= 1
-        delegate?.timerDidCountDown(secondsRemaining: game.secondsRemaining)
+        delegate?.timerDidCountDown(timeRemaining: game.getTimeRemainingDisplay())
 
     }
 
