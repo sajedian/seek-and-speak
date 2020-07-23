@@ -8,15 +8,10 @@
 
 import UIKit
 
-private let reuseIdentifier = "BoardCell"
-
-protocol BoardControllerDelegate: class {
-    
-}
-
 class BoardController: UICollectionViewController {
 
-    var delegate: BoardControllerDelegate?
+    private let reuseIdentifier = "BoardCell"
+
     var gameController: GameController!
     var dictionaryTrie: Trie!
 
@@ -26,7 +21,6 @@ class BoardController: UICollectionViewController {
         collectionView.layer.masksToBounds = true
     }
 
-
     // MARK: UICollectionViewDataSource
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -34,17 +28,18 @@ class BoardController: UICollectionViewController {
         return 1
     }
 
-
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
         return gameController.game.board.letters.count
     }
 
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? BoardCell else {
+    override func collectionView(_ collectionView: UICollectionView,
+                                 cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier,
+                                                            for: indexPath) as? BoardCell else {
             fatalError("Failed to dequeue BoardCell")
         }
-    
+
         // Configure the cell
         cell.contentView.backgroundColor = UIColor.white
         let letter = gameController.game.board.letters[indexPath.item].uppercased()
@@ -58,25 +53,17 @@ class BoardController: UICollectionViewController {
 }
     // UICollectionViewDataSource method
 extension BoardController: UICollectionViewDelegateFlowLayout {
+
     func collectionView(_ : UICollectionView, layout: UICollectionViewLayout, sizeForItemAt: IndexPath) -> CGSize {
         let width = collectionView.frame.size.height / 4 - 5
-
-
         return CGSize(width: width, height: width)
     }
 
     func collectionView(_ : UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
                         insetForSectionAt section: Int) -> UIEdgeInsets {
-
         let cellWidthPadding = CGFloat(1)
         let cellHeightPadding = CGFloat(1)
-        return UIEdgeInsets(top: cellHeightPadding,left: cellWidthPadding, bottom: cellHeightPadding,right: cellWidthPadding)
+        return UIEdgeInsets(top: cellHeightPadding, left: cellWidthPadding,
+                            bottom: cellHeightPadding, right: cellWidthPadding)
     }
 }
-
-
-    // UICollectionViewDelegateFlowLayout method
-
-
-
-

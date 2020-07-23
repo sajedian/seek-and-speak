@@ -36,11 +36,11 @@ struct Board {
         ["H", "L", "N", "N", "R", "Z"],
         ["D", "E", "I", "L", "R", "X"]
     ]
-    
+
     func indexFromRowCol(row: Int, col: Int) -> Int {
         return row * cols + col
     }
-    
+
     func rowColFromIndex(index: Int) -> (Int, Int) {
         return index.quotientAndRemainder(dividingBy: cols)
     }

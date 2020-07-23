@@ -107,7 +107,8 @@ class GameController {
         game = Game()
         game.wordsOnBoard = dictionaryTrie.solve(board: game.board)
         delegate?.newGameStarted()
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(countDownTimerFired), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self,
+                                     selector: #selector(countDownTimerFired), userInfo: nil, repeats: true)
     }
 
 }

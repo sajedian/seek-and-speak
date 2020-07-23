@@ -9,8 +9,8 @@
 import UIKit
 import Speech
 
-class ViewController: UIViewController, BoardControllerDelegate {
-    
+class ViewController: UIViewController {
+
     var boardVC: BoardController!
     var speechVC: SpeechViewController!
     var gameController: GameController!
@@ -20,7 +20,7 @@ class ViewController: UIViewController, BoardControllerDelegate {
     @IBOutlet var scoreLabel: UILabel!
     @IBOutlet var timeLabel: UILabel!
     @IBOutlet var scoreAdditionLabel: UILabel!
-    
+
     var correctGuessedWords: Set<String> = []
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,10 +49,9 @@ class ViewController: UIViewController, BoardControllerDelegate {
         timeLabel.text = gameController.game.timeRemainingDisplay
         scoreLabel.text = String(gameController.game.score)
     }
-    
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let controller = segue.destination as? BoardController {
-            controller.delegate = self
             controller.gameController = gameController
             boardVC = controller
         }
@@ -77,13 +76,13 @@ extension ViewController: GameControllerDelegate {
     }
 
     func timerDidFinish() {
-        let ac = UIAlertController(title: "Game Over", message: "Your score was \(gameController.game.score)", preferredStyle: .alert)
-        let newGameAction = UIAlertAction(title: "Play Again", style: .default) { [weak self] action in
+        let alertController = UIAlertController(title: "Game Over",
+                                message: "Your score was \(gameController.game.score)", preferredStyle: .alert)
+        let newGameAction = UIAlertAction(title: "Play Again", style: .default) { [weak self] _ in
             self?.gameController.newGame()
         }
-        
-        ac.addAction(newGameAction)
-        present(ac, animated: true)
+        alertController.addAction(newGameAction)
+        present(alertController, animated: true)
     }
     func newGameStarted() {
         scoreLabel.text = String(gameController.game.score)
