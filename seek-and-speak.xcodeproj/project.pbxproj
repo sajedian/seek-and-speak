@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9E3F334624C9F97C007836BC /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E3F334524C9F97C007836BC /* UIColor+Extension.swift */; };
+		9E3F334F24CA2200007836BC /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E3F334E24CA2200007836BC /* Default-568h@2x.png */; };
 		9E83680B2493F5E400F98EF9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E83680A2493F5E400F98EF9 /* AppDelegate.swift */; };
 		9E83680D2493F5E400F98EF9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E83680C2493F5E400F98EF9 /* SceneDelegate.swift */; };
 		9E83680F2493F5E400F98EF9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E83680E2493F5E400F98EF9 /* ViewController.swift */; };
@@ -26,6 +27,8 @@
 
 /* Begin PBXFileReference section */
 		9E3F334524C9F97C007836BC /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		9E3F334E24CA2200007836BC /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		9E3F335124CA2339007836BC /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9E8368072493F5E400F98EF9 /* seek-and-speak.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "seek-and-speak.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E83680A2493F5E400F98EF9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9E83680C2493F5E400F98EF9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -33,7 +36,6 @@
 		9E8368112493F5E400F98EF9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9E8368132493F5E700F98EF9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9E8368162493F5E700F98EF9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		9E8368182493F5E700F98EF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9E83681E2493FC9D00F98EF9 /* BoardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardController.swift; sourceTree = "<group>"; };
 		9E8368202494097400F98EF9 /* BoardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardCell.swift; sourceTree = "<group>"; };
 		9E8368222494110F00F98EF9 /* Board.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
@@ -76,14 +78,15 @@
 		9E3F334B24CA00DE007836BC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9E3F334E24CA2200007836BC /* Default-568h@2x.png */,
 				9E83680A2493F5E400F98EF9 /* AppDelegate.swift */,
 				9E83680C2493F5E400F98EF9 /* SceneDelegate.swift */,
 				9E8368102493F5E400F98EF9 /* Main.storyboard */,
 				9E8368152493F5E700F98EF9 /* LaunchScreen.storyboard */,
 				9E8368132493F5E700F98EF9 /* Assets.xcassets */,
-				9E8368182493F5E700F98EF9 /* Info.plist */,
 				9E88C83124958C7700AAC5E3 /* web2.txt */,
 				9E3F334524C9F97C007836BC /* UIColor+Extension.swift */,
+				9E3F335124CA2339007836BC /* Info.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -196,6 +199,7 @@
 				9E8368172493F5E700F98EF9 /* LaunchScreen.storyboard in Resources */,
 				9E8368142493F5E700F98EF9 /* Assets.xcassets in Resources */,
 				9E8368122493F5E400F98EF9 /* Main.storyboard in Resources */,
+				9E3F334F24CA2200007836BC /* Default-568h@2x.png in Resources */,
 				9E88C83224958C7700AAC5E3 /* web2.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -383,13 +387,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TLNU8LHLC5;
-				INFOPLIST_FILE = "word-findy/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/seek-and-speak/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.sajedian.word-findy";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sajedian.seek-and-speak";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -402,13 +406,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TLNU8LHLC5;
-				INFOPLIST_FILE = "word-findy/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/seek-and-speak/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.sajedian.word-findy";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sajedian.seek-and-speak";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
