@@ -61,6 +61,20 @@ extension ViewController: GameControllerDelegate {
     func timerDidCountDown(timeRemaining: String) {
         timeLabel.text = timeRemaining
     }
+
+    func timerDidFinish() {
+        let ac = UIAlertController(title: "Game Over", message: "Your score was \(gameController.game.score)", preferredStyle: .alert)
+        let newGameAction = UIAlertAction(title: "Play Again", style: .default) { [weak self] action in
+            self?.gameController.newGame()
+        }
+        
+        ac.addAction(newGameAction)
+        present(ac, animated: true)
+    }
+    func newGameStarted() {
+        scoreLabel.text = String(gameController.game.score)
+        timeLabel.text = gameController.game.getTimeRemainingDisplay()
+    }
 }
 
 extension ViewController: UITextFieldDelegate {
@@ -76,8 +90,6 @@ extension ViewController: UITextFieldDelegate {
         textField.text = ""
         return true
     }
-    
-    
 }
 
 extension ViewController: SpeechViewControllerDelegate {
