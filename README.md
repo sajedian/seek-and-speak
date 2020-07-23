@@ -10,11 +10,13 @@
 ## Table of Contents 
 * [Introduction](#introduction) <br />
 * [Gameplay](#gameplay)
-    
-* [Built Using](#built-using)
+* [Solving the Board](#solving-the-board)
 * [Installation](#installation)
 * [License](#license)
 
 ## Gameplay
+
+## Solving the Board
+
 
 
