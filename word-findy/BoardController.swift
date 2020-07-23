@@ -15,15 +15,10 @@ protocol BoardControllerDelegate: class {
 }
 
 class BoardController: UICollectionViewController {
-    
-   
-    
+
     var delegate: BoardControllerDelegate?
     var gameController: GameController!
     var dictionaryTrie: Trie!
-
-    
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,36 +55,28 @@ class BoardController: UICollectionViewController {
         }
         return cell
     }
-
-    // MARK: UICollectionViewDelegate
-
-    /*
-    // Uncomment this method to specify if the specified item should be highlighted during tracking
-    override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment this method to specify if the specified item should be selected
-    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-    override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
-    
-    }
-    */
-
 }
+    // UICollectionViewDataSource method
+extension BoardController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ : UICollectionView, layout: UICollectionViewLayout, sizeForItemAt: IndexPath) -> CGSize {
+        let width = collectionView.frame.size.height / 4 - 5
+
+
+        return CGSize(width: width, height: width)
+    }
+
+    func collectionView(_ : UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
+                        insetForSectionAt section: Int) -> UIEdgeInsets {
+
+        let cellWidthPadding = CGFloat(1)
+        let cellHeightPadding = CGFloat(1)
+        return UIEdgeInsets(top: cellHeightPadding,left: cellWidthPadding, bottom: cellHeightPadding,right: cellWidthPadding)
+    }
+}
+
+
+    // UICollectionViewDelegateFlowLayout method
+
+
+
+
