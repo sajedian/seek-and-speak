@@ -148,7 +148,6 @@
                                         <constraint firstItem="DZH-Nm-cBx" firstAttribute="centerX" secondItem="xnv-h7-GIS" secondAttribute="centerX" id="lan-3c-tP8"/>
                                     </constraints>
                                 </collectionViewCellContentView>
-                                <size key="customSize" width="85" height="85"/>
                                 <connections>
                                     <outlet property="letter" destination="DZH-Nm-cBx" id="9Xg-Iy-cyv"/>
                                 </connections>

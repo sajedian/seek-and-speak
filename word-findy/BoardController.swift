@@ -55,29 +55,28 @@ class BoardController: UICollectionViewController {
         }
         return cell
     }
-
+}
     // UICollectionViewDataSource method
+extension BoardController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ : UICollectionView, layout: UICollectionViewLayout, sizeForItemAt: IndexPath) -> CGSize {
+        let width = collectionView.frame.size.height / 4 - 5
 
-        func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
-    sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
 
-        let numberOfSets = CGFloat(self.currentExSets.count)
-
-        let width = (collectionView.frame.size.width - (numberOfSets * view.frame.size.width / 15))/numberOfSets
-
-        let height = collectionView.frame.size.height / 2
-
-        return CGSizeMake(width, height);
+        return CGSize(width: width, height: width)
     }
+
+    func collectionView(_ : UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
+                        insetForSectionAt section: Int) -> UIEdgeInsets {
+
+        let cellWidthPadding = CGFloat(1)
+        let cellHeightPadding = CGFloat(1)
+        return UIEdgeInsets(top: cellHeightPadding,left: cellWidthPadding, bottom: cellHeightPadding,right: cellWidthPadding)
+    }
+}
+
 
     // UICollectionViewDelegateFlowLayout method
 
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
-    insetForSectionAtIndex section: Int) -> UIEdgeInsets {
 
-        let cellWidthPadding = collectionView.frame.size.width / 30
-        let cellHeightPadding = collectionView.frame.size.height / 4
-        return UIEdgeInsets(top: cellHeightPadding,left: cellWidthPadding, bottom: cellHeightPadding,right: cellWidthPadding)
-    }
 
-}
+
