@@ -25,9 +25,10 @@ class GameController {
         if let guessType = game.guessType, let wordGuessed = game.wordGuessed {
             return "\(wordGuessed) - \(guessType.rawValue)"
         } else {
-            return "Guess a Word!"
+            return "Guess a word!"
         }
     }
+
     init(dict: Trie) {
         dictionaryTrie = dict
         newGame()
@@ -37,8 +38,10 @@ class GameController {
         game.wordGuessed = word
         if !game.wordsOnBoard.contains(word) {
             game.guessType = .incorrect
+            game.scoreAddition = 0
         } else if game.correctWords.contains(word) {
             game.guessType = .alreadyGuessed
+            game.scoreAddition = 0
         } else {
             game.guessType = .correct
             game.correctWords.insert(word)
@@ -61,8 +64,10 @@ class GameController {
         game.wordGuessed = words[0]
         if !game.wordsOnBoard.contains(words[0]) {
             game.guessType = .incorrect
+            game.scoreAddition = 0
         } else {
             game.guessType = .alreadyGuessed
+            game.scoreAddition = 0
         }
 
     }
@@ -74,27 +79,28 @@ class GameController {
             delegate?.timerDidFinish()
             timer.invalidate()
         } else {
-            delegate?.timerDidCountDown(timeRemaining: game.getTimeRemainingDisplay())
+            delegate?.timerDidCountDown(timeRemaining: game.timeRemainingDisplay)
         }
     }
 
     func updateScore(wordLength: Int) {
-
+        let scoreAddition: Int
         switch wordLength {
         case 0...2:
-            return
+            scoreAddition = 0
         case 3...4:
-            game.score += 1
+            scoreAddition = 1
         case 5:
-            game.score += 2
+            scoreAddition = 2
         case 6:
-            game.score += 3
+            scoreAddition = 3
         case 7:
-            game.score += 5
+            scoreAddition = 5
         default:
-            game.score += 11
+            scoreAddition = 11
         }
-
+        game.score += scoreAddition
+        game.scoreAddition = scoreAddition
     }
 
     func newGame() {

@@ -76,6 +76,12 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pSK-Mf-dQY">
+                                <rect key="frame" x="158" y="15.5" width="59.5" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -90,6 +96,7 @@
                             <constraint firstItem="1wg-09-Yhq" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="Qyt-hA-q8j"/>
                             <constraint firstItem="qdK-3M-htK" firstAttribute="top" secondItem="clq-E9-TCA" secondAttribute="bottom" constant="30" id="RYW-kW-xdV"/>
                             <constraint firstItem="clq-E9-TCA" firstAttribute="leading" secondItem="1wg-09-Yhq" secondAttribute="trailing" constant="5" id="SoF-2Y-a17"/>
+                            <constraint firstItem="pSK-Mf-dQY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="WzR-pj-Zv7"/>
                             <constraint firstItem="UgV-Pg-mIB" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="bA6-Q9-1Ng"/>
                             <constraint firstItem="xDg-W5-Psb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="ezF-eI-jK5"/>
                             <constraint firstItem="1wg-09-Yhq" firstAttribute="leading" secondItem="qdK-3M-htK" secondAttribute="leading" id="fZJ-ag-um9"/>
@@ -98,12 +105,14 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qdK-3M-htK" secondAttribute="trailing" constant="30" id="qW3-tR-dn5"/>
                             <constraint firstItem="E8o-ho-mL0" firstAttribute="top" secondItem="xDg-W5-Psb" secondAttribute="bottom" constant="26" id="uCL-A3-j3c"/>
                             <constraint firstItem="qdK-3M-htK" firstAttribute="top" secondItem="1wg-09-Yhq" secondAttribute="bottom" constant="30" id="vDN-cZ-98G"/>
+                            <constraint firstItem="pSK-Mf-dQY" firstAttribute="centerY" secondItem="UgV-Pg-mIB" secondAttribute="centerY" id="xd4-7n-mWU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="EQP-kx-fxH"/>
                     <connections>
                         <outlet property="guessLabel" destination="E8o-ho-mL0" id="Px7-zV-Had"/>
+                        <outlet property="scoreAdditionLabel" destination="pSK-Mf-dQY" id="bQp-oq-q75"/>
                         <outlet property="scoreLabel" destination="clq-E9-TCA" id="TrS-CI-IpR"/>
                         <outlet property="textField" destination="xDg-W5-Psb" id="D76-zE-ikW"/>
                         <outlet property="timeLabel" destination="Wmx-uu-2l4" id="ugn-9x-bVc"/>

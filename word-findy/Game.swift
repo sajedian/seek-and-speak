@@ -7,12 +7,12 @@
 //
 
 import Foundation
+import UIKit
 
 enum GuessType: String {
-    case incorrect = "Incorrect"
-    case alreadyGuessed = "Already Guessed"
-    case correct = "Correct!"
-
+    case incorrect = "incorrect"
+    case alreadyGuessed = "already guessed"
+    case correct = "correct!"
 }
 
 struct Game {
@@ -23,8 +23,26 @@ struct Game {
     var board = Board()
     var guessType: GuessType?
     var wordGuessed: String?
+    var scoreAddition: Int = 0
 
-    func getTimeRemainingDisplay() -> String {
+    var displayColor: UIColor {
+        switch guessType {
+        case .incorrect, .alreadyGuessed:
+            return .purple
+        default:
+            return .green
+        }
+    }
+
+    var scoreAdditionDisplay: String {
+        if scoreAddition > 0 {
+            return "+\(scoreAddition)"
+        } else {
+            return ""
+        }
+    }
+
+    var timeRemainingDisplay: String {
         let minutes = secondsRemaining / 60
         let seconds = secondsRemaining % 60
         if seconds < 10 {
@@ -32,6 +50,5 @@ struct Game {
         } else {
             return "\(minutes):\(seconds)"
         }
-
     }
 }

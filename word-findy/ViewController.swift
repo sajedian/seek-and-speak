@@ -19,14 +19,17 @@ class ViewController: UIViewController, BoardControllerDelegate {
     @IBOutlet var guessLabel: UILabel!
     @IBOutlet var scoreLabel: UILabel!
     @IBOutlet var timeLabel: UILabel!
+    @IBOutlet var scoreAdditionLabel: UILabel!
     
     var correctGuessedWords: Set<String> = []
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(red: 141/255, green: 185/255, blue: 217/255, alpha: 1)
-        guessLabel.text = "Guess a word"
+        guessLabel.text = gameController.displayText
         textField.autocorrectionType = .no
         guessLabel.text = gameController.displayText
+        scoreAdditionLabel.text = ""
+        scoreAdditionLabel.textColor = .green
 
         gameController.delegate = self
         //load speech controller vc
@@ -43,8 +46,8 @@ class ViewController: UIViewController, BoardControllerDelegate {
         speechVC.wordConstraints = Array(gameController.game.wordsOnBoard.prefix(100))
         speechVC.didMove(toParent: self)
 
-        timeLabel.text = gameController.game.getTimeRemainingDisplay()
-        scoreLabel.text = "0"
+        timeLabel.text = gameController.game.timeRemainingDisplay
+        scoreLabel.text = String(gameController.game.score)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -54,10 +57,21 @@ class ViewController: UIViewController, BoardControllerDelegate {
             boardVC = controller
         }
     }
-    
+
+    func updateDisplay() {
+        scoreAdditionLabel.alpha = 1
+        guessLabel.text = gameController.displayText
+        guessLabel.textColor = gameController.game.displayColor
+        scoreLabel.text = String(gameController.game.score)
+        scoreAdditionLabel.text = gameController.game.scoreAdditionDisplay
+        UIView.animate(withDuration: 2) { [weak self] in
+            self?.scoreAdditionLabel.alpha = 0
+        }
+    }
 }
 
 extension ViewController: GameControllerDelegate {
+
     func timerDidCountDown(timeRemaining: String) {
         timeLabel.text = timeRemaining
     }
@@ -73,31 +87,30 @@ extension ViewController: GameControllerDelegate {
     }
     func newGameStarted() {
         scoreLabel.text = String(gameController.game.score)
-        timeLabel.text = gameController.game.getTimeRemainingDisplay()
+        timeLabel.text = gameController.game.timeRemainingDisplay
+        guessLabel.text = gameController.displayText
     }
 }
 
 extension ViewController: UITextFieldDelegate {
 
-        
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         guard let text = textField.text else {
             return false
         }
         gameController.playerGuessed(text: text)
-        guessLabel.text = gameController.displayText
-        scoreLabel.text = String(gameController.game.score)
         textField.text = ""
+        updateDisplay()
         return true
     }
 }
 
 extension ViewController: SpeechViewControllerDelegate {
+
     func speechControllerDidFinish(with results: [SFTranscription]) {
         guard !results.isEmpty else { return }
         let strings = results.map { $0.formattedString.lowercased() }
         gameController.playerGuessed(speech: strings)
-        guessLabel.text = gameController.displayText
-        scoreLabel.text = String(gameController.game.score)
+        updateDisplay()
     }
 }
