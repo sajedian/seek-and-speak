@@ -15,21 +15,21 @@ class ViewController: UIViewController {
     var speechVC: SpeechViewController!
     var gameController: GameController!
     var dictionaryTrie: Trie!
+    var correctGuessedWords: Set<String> = []
+
     @IBOutlet var textField: UITextField!
     @IBOutlet var guessLabel: UILabel!
     @IBOutlet var scoreLabel: UILabel!
     @IBOutlet var timeLabel: UILabel!
     @IBOutlet var scoreAdditionLabel: UILabel!
 
-    var correctGuessedWords: Set<String> = []
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .mediumPurple
-        guessLabel.text = gameController.displayText
+        view.backgroundColor = .lightPurple
         textField.autocorrectionType = .no
-        guessLabel.text = gameController.displayText
-        scoreAdditionLabel.text = ""
-        scoreAdditionLabel.textColor = .limeGreen
+
+        scoreAdditionLabel.textColor = .aqua
+        updateDisplay()
 
         gameController.delegate = self
         //load speech controller vc
@@ -45,9 +45,6 @@ class ViewController: UIViewController {
         speechVC.delegate = self
         speechVC.wordConstraints = Array(gameController.game.wordsOnBoard.prefix(100))
         speechVC.didMove(toParent: self)
-
-        timeLabel.text = gameController.game.timeRemainingDisplay
-        scoreLabel.text = String(gameController.game.score)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

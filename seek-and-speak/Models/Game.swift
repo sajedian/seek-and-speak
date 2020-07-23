@@ -29,11 +29,9 @@ struct Game {
 
         switch guessType {
         case .incorrect, .alreadyGuessed:
-            return .darkRed
-        case .correct:
-            return .limeGreen
+            return .darkPink
         default:
-            return .black
+            return .aqua
         }
     }
 
