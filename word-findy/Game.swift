@@ -27,6 +27,11 @@ struct Game {
     func getTimeRemainingDisplay() -> String {
         let minutes = secondsRemaining / 60
         let seconds = secondsRemaining % 60
-        return "\(minutes):\(seconds)"
+        if seconds < 10 {
+            return "\(minutes):0\(seconds)"
+        } else {
+            return "\(minutes):\(seconds)"
+        }
+
     }
 }
