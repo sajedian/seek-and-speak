@@ -14,3 +14,4 @@ Gameplay is demonstrated below first using speech recognition, then using text e
 Seek and Speak has no dependencies. Simply clone or download the repository.
 
 ## License
+Seek and Speak is available under the MIT License. See LICENSE for more info.
