@@ -43,6 +43,8 @@ class ViewController: UIViewController, BoardControllerDelegate {
         speechVC.wordConstraints = Array(gameController.game.wordsOnBoard.prefix(100))
         speechVC.didMove(toParent: self)
 
+        timeLabel.text = gameController.game.getTimeRemainingDisplay()
+        scoreLabel.text = "0"
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -56,8 +58,22 @@ class ViewController: UIViewController, BoardControllerDelegate {
 }
 
 extension ViewController: GameControllerDelegate {
-    func timerDidCountDown(secondsRemaining: Int) {
-        timeLabel.text = String(secondsRemaining)
+    func timerDidCountDown(timeRemaining: String) {
+        timeLabel.text = timeRemaining
+    }
+
+    func timerDidFinish() {
+        let ac = UIAlertController(title: "Game Over", message: "Your score was \(gameController.game.score)", preferredStyle: .alert)
+        let newGameAction = UIAlertAction(title: "Play Again", style: .default) { [weak self] action in
+            self?.gameController.newGame()
+        }
+        
+        ac.addAction(newGameAction)
+        present(ac, animated: true)
+    }
+    func newGameStarted() {
+        scoreLabel.text = String(gameController.game.score)
+        timeLabel.text = gameController.game.getTimeRemainingDisplay()
     }
 }
 
@@ -74,11 +90,7 @@ extension ViewController: UITextFieldDelegate {
         textField.text = ""
         return true
     }
-    
-    
 }
-
-
 
 extension ViewController: SpeechViewControllerDelegate {
     func speechControllerDidFinish(with results: [SFTranscription]) {

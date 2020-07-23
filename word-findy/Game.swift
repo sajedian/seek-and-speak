@@ -24,4 +24,14 @@ struct Game {
     var guessType: GuessType?
     var wordGuessed: String?
 
+    func getTimeRemainingDisplay() -> String {
+        let minutes = secondsRemaining / 60
+        let seconds = secondsRemaining % 60
+        if seconds < 10 {
+            return "\(minutes):0\(seconds)"
+        } else {
+            return "\(minutes):\(seconds)"
+        }
+
+    }
 }

@@ -9,7 +9,9 @@
 import Foundation
 
 protocol GameControllerDelegate: class {
-    func timerDidCountDown(secondsRemaining: Int)
+    func timerDidCountDown(timeRemaining: String)
+    func timerDidFinish()
+    func newGameStarted()
 }
 
 class GameController {
@@ -68,8 +70,12 @@ class GameController {
     @objc func countDownTimerFired() {
         print(game.secondsRemaining)
         game.secondsRemaining -= 1
-        delegate?.timerDidCountDown(secondsRemaining: game.secondsRemaining)
-
+        if game.secondsRemaining < 0 {
+            delegate?.timerDidFinish()
+            timer.invalidate()
+        } else {
+            delegate?.timerDidCountDown(timeRemaining: game.getTimeRemainingDisplay())
+        }
     }
 
     func updateScore(wordLength: Int) {
@@ -94,6 +100,7 @@ class GameController {
     func newGame() {
         game = Game()
         game.wordsOnBoard = dictionaryTrie.solve(board: game.board)
+        delegate?.newGameStarted()
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(countDownTimerFired), userInfo: nil, repeats: true)
     }
 
