@@ -6,11 +6,11 @@
 
 ## Gameplay
 
-Gameplay is demonstrated below first using speech recognition, then using text entry.
+Gameplay is demonstrated below first using speech recognition, then using text entry. When using speech recognition, users can either say or spell the word.
 
 <p align="center"> <img width="300" src="images/gameplay.gif"> </p>
 
 ## Installation
-Seek and speak has no dependencies. Simply clone or download the repository.
+Seek and Speak has no dependencies. Simply clone or download the repository.
 
 ## License
