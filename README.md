@@ -4,7 +4,7 @@
 
 <p align="left">Word search game similar to Boggle but with speech recognition gameplay. Built for iOS in Swift 5 using the Speech framework.</p>
 
-<p align="center"> <img width="400" src="images/screenshot-main.jpg"> </p>
+<p align="center"> <img width="300" src="images/screenshot-main.jpg"> </p>
 
 
 ## Table of Contents 
@@ -15,6 +15,10 @@
 * [License](#license)
 
 ## Gameplay
+Gameplay is demonstrated below first using speech recognition, then using text entry.
+
+<p align="center"> <img width="300" src="images/gameplay.gif"> </p>
+
 
 ## Solving the Board
 
