@@ -37,12 +37,12 @@ public class SpeechViewController: UIViewController, SFSpeechRecognizerDelegate 
         view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
 
-        view.backgroundColor = UIColor(red: 141/255, green: 185/255, blue: 217/255, alpha: 1)
+        view.backgroundColor = UIColor.mediumPurple
 
         recordButton = UIButton(type: .custom)
         recordButton.addTarget(self, action: #selector(recordButtonTouched), for: .touchDown)
         recordButton.addTarget(self, action: #selector(recordButtonReleased), for: .touchUpInside)
-        recordButton.backgroundColor = .red
+        recordButton.backgroundColor = UIColor.darkRed
         recordButton.setImage(UIImage(systemName: "mic.fill"), for: .normal)
         recordButton.frame = CGRect(x: 200, y: 100, width: 50, height: 50)
         recordButton.layer.cornerRadius = 35
@@ -53,6 +53,8 @@ public class SpeechViewController: UIViewController, SFSpeechRecognizerDelegate 
         recordButton.contentHorizontalAlignment = .fill
         recordButton.imageEdgeInsets = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
         recordButton.tintColor = .white
+        recordButton.adjustsImageWhenHighlighted = false
+        recordButton.showsTouchWhenHighlighted = false
 
         NSLayoutConstraint.activate([
             recordButton.bottomAnchor.constraint(equalTo: view.layoutMarginsGuide.bottomAnchor, constant: -20),
@@ -184,7 +186,7 @@ public class SpeechViewController: UIViewController, SFSpeechRecognizerDelegate 
     }
 
     @objc func recordButtonReleased() {
-        recordButton.backgroundColor = .red
+        recordButton.backgroundColor = .darkRed
         if audioEngine.isRunning {
             audioEngine.stop()
             recognitionRequest?.endAudio()

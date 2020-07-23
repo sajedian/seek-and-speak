@@ -26,11 +26,14 @@ struct Game {
     var scoreAddition: Int = 0
 
     var displayColor: UIColor {
+
         switch guessType {
         case .incorrect, .alreadyGuessed:
-            return .purple
+            return .darkRed
+        case .correct:
+            return .limeGreen
         default:
-            return .green
+            return .black
         }
     }
 

@@ -24,12 +24,12 @@ class ViewController: UIViewController {
     var correctGuessedWords: Set<String> = []
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor(red: 141/255, green: 185/255, blue: 217/255, alpha: 1)
+        view.backgroundColor = .mediumPurple
         guessLabel.text = gameController.displayText
         textField.autocorrectionType = .no
         guessLabel.text = gameController.displayText
         scoreAdditionLabel.text = ""
-        scoreAdditionLabel.textColor = .green
+        scoreAdditionLabel.textColor = .limeGreen
 
         gameController.delegate = self
         //load speech controller vc
@@ -74,7 +74,6 @@ extension ViewController: GameControllerDelegate {
     func timerDidCountDown(timeRemaining: String) {
         timeLabel.text = timeRemaining
     }
-
     func timerDidFinish() {
         let alertController = UIAlertController(title: "Game Over",
                                 message: "Your score was \(gameController.game.score)", preferredStyle: .alert)
