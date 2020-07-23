@@ -31,11 +31,6 @@ class GameController {
         newGame()
     }
 
-
-
-
-
-
     func playerGuessed(text word: String) {
         game.wordGuessed = word
         if !game.wordsOnBoard.contains(word) {
@@ -95,7 +90,6 @@ class GameController {
         }
 
     }
-    
 
     func newGame() {
         game = Game()
@@ -104,5 +98,3 @@ class GameController {
     }
 
 }
-
-
