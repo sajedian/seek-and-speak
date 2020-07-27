@@ -6,8 +6,23 @@
 //  Copyright © 2020 Renee Sajedian. All rights reserved.
 //
 
+import Foundation
+
 class Trie {
     var root = TrieNode()
+
+    init() {
+        if let dictionaryURL = Bundle.main.url(forResource: "web2", withExtension: "txt") {
+           if let dictText = try? String(contentsOf: dictionaryURL) {
+               let dictionary = dictText.components(separatedBy: "\n")
+               for word in dictionary {
+                   self.insert(word: word)
+               }
+               return
+           }
+        }
+        fatalError("Could not find dictionary")
+    }
 
     func insert(word: String) {
         if word.isEmpty {
@@ -20,21 +35,6 @@ class Trie {
         }
         //when finished adding characters, mark end of word
         currNode.isEndOfWord = true
-    }
-
-    func contains(word: String) -> Bool {
-        if word.isEmpty {
-            return false
-        }
-        var currNode = root
-        for char in Array(word) {
-            if let nextNode = currNode.children[char] {
-                currNode = nextNode
-            } else {
-                return false
-            }
-        }
-        return currNode.isEndOfWord
     }
 
     func solve(board: Board) -> Set<String> {
@@ -75,7 +75,6 @@ class Trie {
             }
         }
 
-        //let char = Character(board.letters[index])
         let (row, col) = board.rowColFromIndex(index: index)
 
         for rowIndex in row-1...row+1 {

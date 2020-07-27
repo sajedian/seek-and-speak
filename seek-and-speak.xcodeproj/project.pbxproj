@@ -124,7 +124,6 @@
 				9E8368152493F5E700F98EF9 /* LaunchScreen.storyboard */,
 				9E8368132493F5E700F98EF9 /* Assets.xcassets */,
 				9E88C83124958C7700AAC5E3 /* web2.txt */,
-				9E3F334524C9F97C007836BC /* UIColor+Extension.swift */,
 				9E3F335124CA2339007836BC /* Info.plist */,
 			);
 			path = Resources;
@@ -166,10 +165,19 @@
 			path = "seek-and-speakUITests";
 			sourceTree = "<group>";
 		};
+		9E525A8B24CF50D200D7F2CC /* Convenience Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9E3F334524C9F97C007836BC /* UIColor+Extension.swift */,
+			);
+			path = "Convenience Extensions";
+			sourceTree = "<group>";
+		};
 		9E8367FE2493F5E400F98EF9 = {
 			isa = PBXGroup;
 			children = (
 				9E8368092493F5E400F98EF9 /* seek-and-speak */,
+				9E525A8B24CF50D200D7F2CC /* Convenience Extensions */,
 				9E525A7424CF315D00D7F2CC /* seek-and-speakTests */,
 				9E525A8224CF316D00D7F2CC /* seek-and-speakUITests */,
 				9E8368082493F5E400F98EF9 /* Products */,

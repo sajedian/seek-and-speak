@@ -8,8 +8,10 @@
 
 struct Board {
     var letters = [String]()
-    var rows = 4
-    var cols = 4
+
+    private(set) var rows = 4
+    private(set) var cols = 4
+
     init() {
         for die in dice {
             letters.append(die.randomElement()!.lowercased())
