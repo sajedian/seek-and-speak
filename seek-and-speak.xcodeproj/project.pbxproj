@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		9E3F334624C9F97C007836BC /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E3F334524C9F97C007836BC /* UIColor+Extension.swift */; };
 		9E3F334F24CA2200007836BC /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E3F334E24CA2200007836BC /* Default-568h@2x.png */; };
-		9E525A7624CF315D00D7F2CC /* seek_and_speakTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E525A7524CF315D00D7F2CC /* seek_and_speakTests.swift */; };
+		9E525A7624CF315D00D7F2CC /* loadingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E525A7524CF315D00D7F2CC /* loadingTests.swift */; };
 		9E525A8424CF316D00D7F2CC /* seek_and_speakUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E525A8324CF316D00D7F2CC /* seek_and_speakUITests.swift */; };
 		9E83680B2493F5E400F98EF9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E83680A2493F5E400F98EF9 /* AppDelegate.swift */; };
 		9E83680D2493F5E400F98EF9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E83680C2493F5E400F98EF9 /* SceneDelegate.swift */; };
@@ -49,7 +49,7 @@
 		9E3F334E24CA2200007836BC /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		9E3F335124CA2339007836BC /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9E525A7324CF315D00D7F2CC /* seek-and-speakTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "seek-and-speakTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		9E525A7524CF315D00D7F2CC /* seek_and_speakTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = seek_and_speakTests.swift; sourceTree = "<group>"; };
+		9E525A7524CF315D00D7F2CC /* loadingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loadingTests.swift; sourceTree = "<group>"; };
 		9E525A7724CF315D00D7F2CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9E525A8124CF316D00D7F2CC /* seek-and-speakUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "seek-and-speakUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E525A8324CF316D00D7F2CC /* seek_and_speakUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = seek_and_speakUITests.swift; sourceTree = "<group>"; };
@@ -151,7 +151,7 @@
 		9E525A7424CF315D00D7F2CC /* seek-and-speakTests */ = {
 			isa = PBXGroup;
 			children = (
-				9E525A7524CF315D00D7F2CC /* seek_and_speakTests.swift */,
+				9E525A7524CF315D00D7F2CC /* loadingTests.swift */,
 				9E525A7724CF315D00D7F2CC /* Info.plist */,
 			);
 			path = "seek-and-speakTests";
@@ -352,7 +352,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9E525A7624CF315D00D7F2CC /* seek_and_speakTests.swift in Sources */,
+				9E525A7624CF315D00D7F2CC /* loadingTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

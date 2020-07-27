@@ -28,7 +28,6 @@ class BoardController: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
         return gameController.game.board.letters.count
     }
 
@@ -50,10 +49,11 @@ class BoardController: UICollectionViewController {
         return cell
     }
 }
-    // UICollectionViewDataSource method
+
 extension BoardController: UICollectionViewDelegateFlowLayout {
 
-    func collectionView(_ : UICollectionView, layout: UICollectionViewLayout, sizeForItemAt: IndexPath) -> CGSize {
+    func collectionView(_ : UICollectionView, layout: UICollectionViewLayout,
+                        sizeForItemAt: IndexPath) -> CGSize {
         let width = collectionView.frame.size.height / 4 - 5
         return CGSize(width: width, height: width)
     }

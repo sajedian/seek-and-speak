@@ -6,8 +6,23 @@
 //  Copyright © 2020 Renee Sajedian. All rights reserved.
 //
 
+import Foundation
+
 class Trie {
     var root = TrieNode()
+
+    init() {
+        if let dictionaryURL = Bundle.main.url(forResource: "web2", withExtension: "txt") {
+           if let dictText = try? String(contentsOf: dictionaryURL) {
+               let dictionary = dictText.components(separatedBy: "\n")
+               for word in dictionary {
+                   self.insert(word: word)
+               }
+               return
+           }
+        }
+        fatalError("Could not find dictionary")
+    }
 
     func insert(word: String) {
         if word.isEmpty {

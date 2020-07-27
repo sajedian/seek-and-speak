@@ -8,6 +8,7 @@
 
 import XCTest
 
+//swiftlint:disable type_name
 class seek_and_speakTests: XCTestCase {
 
     override func setUpWithError() throws {
