@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		9E3F334624C9F97C007836BC /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E3F334524C9F97C007836BC /* UIColor+Extension.swift */; };
 		9E3F334F24CA2200007836BC /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E3F334E24CA2200007836BC /* Default-568h@2x.png */; };
+		9E525A7624CF315D00D7F2CC /* seek_and_speakTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E525A7524CF315D00D7F2CC /* seek_and_speakTests.swift */; };
+		9E525A8424CF316D00D7F2CC /* seek_and_speakUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E525A8324CF316D00D7F2CC /* seek_and_speakUITests.swift */; };
 		9E83680B2493F5E400F98EF9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E83680A2493F5E400F98EF9 /* AppDelegate.swift */; };
 		9E83680D2493F5E400F98EF9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E83680C2493F5E400F98EF9 /* SceneDelegate.swift */; };
 		9E83680F2493F5E400F98EF9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E83680E2493F5E400F98EF9 /* ViewController.swift */; };
@@ -25,10 +27,33 @@
 		9ED1806624BE673700BDB452 /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED1806524BE673700BDB452 /* GameController.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		9E525A7824CF315D00D7F2CC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9E8367FF2493F5E400F98EF9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9E8368062493F5E400F98EF9;
+			remoteInfo = "seek-and-speak";
+		};
+		9E525A8624CF316D00D7F2CC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9E8367FF2493F5E400F98EF9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9E8368062493F5E400F98EF9;
+			remoteInfo = "seek-and-speak";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		9E3F334524C9F97C007836BC /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		9E3F334E24CA2200007836BC /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		9E3F335124CA2339007836BC /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9E525A7324CF315D00D7F2CC /* seek-and-speakTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "seek-and-speakTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9E525A7524CF315D00D7F2CC /* seek_and_speakTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = seek_and_speakTests.swift; sourceTree = "<group>"; };
+		9E525A7724CF315D00D7F2CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9E525A8124CF316D00D7F2CC /* seek-and-speakUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "seek-and-speakUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9E525A8324CF316D00D7F2CC /* seek_and_speakUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = seek_and_speakUITests.swift; sourceTree = "<group>"; };
+		9E525A8524CF316D00D7F2CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9E8368072493F5E400F98EF9 /* seek-and-speak.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "seek-and-speak.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E83680A2493F5E400F98EF9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9E83680C2493F5E400F98EF9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +72,20 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		9E525A7024CF315D00D7F2CC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9E525A7E24CF316D00D7F2CC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9E8368042493F5E400F98EF9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -109,10 +148,30 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		9E525A7424CF315D00D7F2CC /* seek-and-speakTests */ = {
+			isa = PBXGroup;
+			children = (
+				9E525A7524CF315D00D7F2CC /* seek_and_speakTests.swift */,
+				9E525A7724CF315D00D7F2CC /* Info.plist */,
+			);
+			path = "seek-and-speakTests";
+			sourceTree = "<group>";
+		};
+		9E525A8224CF316D00D7F2CC /* seek-and-speakUITests */ = {
+			isa = PBXGroup;
+			children = (
+				9E525A8324CF316D00D7F2CC /* seek_and_speakUITests.swift */,
+				9E525A8524CF316D00D7F2CC /* Info.plist */,
+			);
+			path = "seek-and-speakUITests";
+			sourceTree = "<group>";
+		};
 		9E8367FE2493F5E400F98EF9 = {
 			isa = PBXGroup;
 			children = (
 				9E8368092493F5E400F98EF9 /* seek-and-speak */,
+				9E525A7424CF315D00D7F2CC /* seek-and-speakTests */,
+				9E525A8224CF316D00D7F2CC /* seek-and-speakUITests */,
 				9E8368082493F5E400F98EF9 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -121,6 +180,8 @@
 			isa = PBXGroup;
 			children = (
 				9E8368072493F5E400F98EF9 /* seek-and-speak.app */,
+				9E525A7324CF315D00D7F2CC /* seek-and-speakTests.xctest */,
+				9E525A8124CF316D00D7F2CC /* seek-and-speakUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -140,6 +201,42 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		9E525A7224CF315D00D7F2CC /* seek-and-speakTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9E525A7A24CF315D00D7F2CC /* Build configuration list for PBXNativeTarget "seek-and-speakTests" */;
+			buildPhases = (
+				9E525A6F24CF315D00D7F2CC /* Sources */,
+				9E525A7024CF315D00D7F2CC /* Frameworks */,
+				9E525A7124CF315D00D7F2CC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9E525A7924CF315D00D7F2CC /* PBXTargetDependency */,
+			);
+			name = "seek-and-speakTests";
+			productName = "seek-and-speakTests";
+			productReference = 9E525A7324CF315D00D7F2CC /* seek-and-speakTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		9E525A8024CF316D00D7F2CC /* seek-and-speakUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9E525A8824CF316D00D7F2CC /* Build configuration list for PBXNativeTarget "seek-and-speakUITests" */;
+			buildPhases = (
+				9E525A7D24CF316D00D7F2CC /* Sources */,
+				9E525A7E24CF316D00D7F2CC /* Frameworks */,
+				9E525A7F24CF316D00D7F2CC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9E525A8724CF316D00D7F2CC /* PBXTargetDependency */,
+			);
+			name = "seek-and-speakUITests";
+			productName = "seek-and-speakUITests";
+			productReference = 9E525A8124CF316D00D7F2CC /* seek-and-speakUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		9E8368062493F5E400F98EF9 /* seek-and-speak */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9E83681B2493F5E700F98EF9 /* Build configuration list for PBXNativeTarget "seek-and-speak" */;
@@ -164,10 +261,18 @@
 		9E8367FF2493F5E400F98EF9 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1150;
+				LastSwiftUpdateCheck = 1160;
 				LastUpgradeCheck = 1150;
 				ORGANIZATIONNAME = "Renee Sajedian";
 				TargetAttributes = {
+					9E525A7224CF315D00D7F2CC = {
+						CreatedOnToolsVersion = 11.6;
+						TestTargetID = 9E8368062493F5E400F98EF9;
+					};
+					9E525A8024CF316D00D7F2CC = {
+						CreatedOnToolsVersion = 11.6;
+						TestTargetID = 9E8368062493F5E400F98EF9;
+					};
 					9E8368062493F5E400F98EF9 = {
 						CreatedOnToolsVersion = 11.5;
 					};
@@ -187,11 +292,27 @@
 			projectRoot = "";
 			targets = (
 				9E8368062493F5E400F98EF9 /* seek-and-speak */,
+				9E525A7224CF315D00D7F2CC /* seek-and-speakTests */,
+				9E525A8024CF316D00D7F2CC /* seek-and-speakUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		9E525A7124CF315D00D7F2CC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9E525A7F24CF316D00D7F2CC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9E8368052493F5E400F98EF9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -227,6 +348,22 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		9E525A6F24CF315D00D7F2CC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9E525A7624CF315D00D7F2CC /* seek_and_speakTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9E525A7D24CF316D00D7F2CC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9E525A8424CF316D00D7F2CC /* seek_and_speakUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9E8368032493F5E400F98EF9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -246,6 +383,19 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9E525A7924CF315D00D7F2CC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9E8368062493F5E400F98EF9 /* seek-and-speak */;
+			targetProxy = 9E525A7824CF315D00D7F2CC /* PBXContainerItemProxy */;
+		};
+		9E525A8724CF316D00D7F2CC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9E8368062493F5E400F98EF9 /* seek-and-speak */;
+			targetProxy = 9E525A8624CF316D00D7F2CC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		9E8368102493F5E400F98EF9 /* Main.storyboard */ = {
@@ -267,6 +417,88 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		9E525A7B24CF315D00D7F2CC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TLNU8LHLC5;
+				INFOPLIST_FILE = "seek-and-speakTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sajedian.seek-and-speakTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/seek-and-speak.app/seek-and-speak";
+			};
+			name = Debug;
+		};
+		9E525A7C24CF315D00D7F2CC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TLNU8LHLC5;
+				INFOPLIST_FILE = "seek-and-speakTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sajedian.seek-and-speakTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/seek-and-speak.app/seek-and-speak";
+			};
+			name = Release;
+		};
+		9E525A8924CF316D00D7F2CC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TLNU8LHLC5;
+				INFOPLIST_FILE = "seek-and-speakUITests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sajedian.seek-and-speakUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "seek-and-speak";
+			};
+			name = Debug;
+		};
+		9E525A8A24CF316D00D7F2CC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TLNU8LHLC5;
+				INFOPLIST_FILE = "seek-and-speakUITests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sajedian.seek-and-speakUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "seek-and-speak";
+			};
+			name = Release;
+		};
 		9E8368192493F5E700F98EF9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -422,6 +654,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		9E525A7A24CF315D00D7F2CC /* Build configuration list for PBXNativeTarget "seek-and-speakTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9E525A7B24CF315D00D7F2CC /* Debug */,
+				9E525A7C24CF315D00D7F2CC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9E525A8824CF316D00D7F2CC /* Build configuration list for PBXNativeTarget "seek-and-speakUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9E525A8924CF316D00D7F2CC /* Debug */,
+				9E525A8A24CF316D00D7F2CC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		9E8368022493F5E400F98EF9 /* Build configuration list for PBXProject "seek-and-speak" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
