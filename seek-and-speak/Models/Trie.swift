@@ -101,7 +101,6 @@ class Trie {
 }
 
 class TrieNode {
-
     var children: [Character: TrieNode] = [:]
     var isEndOfWord = false
     func findOrCreateChild(for char: Character) -> TrieNode {

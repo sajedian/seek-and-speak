@@ -6,8 +6,6 @@
 //  Copyright © 2020 Renee Sajedian. All rights reserved.
 //
 
-import Foundation
-
 struct Board {
     var letters = [String]()
     var rows = 4
