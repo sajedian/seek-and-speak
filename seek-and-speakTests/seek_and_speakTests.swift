@@ -147,7 +147,3 @@ class boardTests: XCTestCase {
         XCTAssertEqual(col, 3, "col was not 3 for index 11")
     }
 }
-
-class gameTests(){
-    
-}
