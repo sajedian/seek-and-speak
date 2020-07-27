@@ -37,21 +37,6 @@ class Trie {
         currNode.isEndOfWord = true
     }
 
-    func contains(word: String) -> Bool {
-        if word.isEmpty {
-            return false
-        }
-        var currNode = root
-        for char in Array(word) {
-            if let nextNode = currNode.children[char] {
-                currNode = nextNode
-            } else {
-                return false
-            }
-        }
-        return currNode.isEndOfWord
-    }
-
     func solve(board: Board) -> Set<String> {
         var foundWords = Set<String>()
         for (index, letter) in board.letters.enumerated() {
@@ -90,7 +75,6 @@ class Trie {
             }
         }
 
-        //let char = Character(board.letters[index])
         let (row, col) = board.rowColFromIndex(index: index)
 
         for rowIndex in row-1...row+1 {

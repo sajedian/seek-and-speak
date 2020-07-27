@@ -36,6 +36,7 @@ class GameController {
 
     func playerGuessed(text word: String) {
         game.wordGuessed = word
+        print(game.board.letters)
         if !game.wordsOnBoard.contains(word) {
             game.guessType = .incorrect
             game.scoreAddition = 0
@@ -73,7 +74,6 @@ class GameController {
     }
 
     @objc func countDownTimerFired() {
-        print(game.secondsRemaining)
         game.secondsRemaining -= 1
         if game.secondsRemaining < 0 {
             delegate?.timerDidFinish()
