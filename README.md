@@ -1,6 +1,6 @@
 <h1 align="left">Seek and Speak</h1>
 
-<p align="left">Seek and Speak is a word search game with speech recognition gameplay. Built for iOS in Swift 5 using the Speech framework.</p>
+<p align="left">Seek and Speak is a word search game similar to Boggle but with speech recognition gameplay. Built for iOS in Swift 5 using the Speech framework.</p>
 
 <p align="center"> <img width="300" src="images/screenshot-main.jpg"> </p>
 
